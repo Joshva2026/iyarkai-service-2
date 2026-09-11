@@ -1,136 +1,3237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+<title>IYARKAI SERVICE — Ambulance • ICU • Body Transport • Freezer • Recovery</title>
+
+<meta name="description"
+      content="IYARKAI SERVICE — 24/7 Ambulance, ICU Ambulance, Body Transportation, Freezer Box, Vehicle Recovery and Long Distance Transport services.">
+
 <meta name="theme-color" content="#050608">
-<title>IYARKAI SERVICE — Recovery & Towing</title>
-<meta name="description" content="IYARKAI SERVICE — 24/7 recovery vehicle and towing assistance.">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-:root{--bg:#040506;--panel:#0a0d10;--line:rgba(255,255,255,.11);--muted:#899198;--white:#f5f7f8;--red:#ff2b2b;--red2:#ff5b38;--green:#16d77a;--ease:cubic-bezier(.16,1,.3,1)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}.grain{position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");transform:rotate(7deg)}.cursor{position:fixed;width:22px;height:22px;border:1px solid rgba(255,255,255,.65);border-radius:50%;pointer-events:none;z-index:200;mix-blend-mode:difference;transition:transform .15s ease;display:none}.cursor-dot{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff;z-index:201;pointer-events:none;display:none}
-a{color:inherit}.nav{position:fixed;z-index:50;left:0;right:0;top:0;height:78px;padding:0 clamp(20px,5vw,80px);display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(0,0,0,.88),rgba(0,0,0,.12));backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}.logo{display:flex;gap:12px;align-items:center;text-decoration:none}.logo-symbol{width:42px;height:34px;position:relative;border:2px solid var(--red);transform:skew(-13deg);display:grid;place-items:center;color:var(--red);font-weight:900;font-size:20px}.logo-text{font-family:"Barlow Condensed";font-weight:800;font-size:20px;letter-spacing:.5px}.logo-text b{color:var(--red)}.logo-text small{display:block;font:600 8px Inter;letter-spacing:3px;color:#8b949a;margin-top:2px}.navlinks{display:flex;gap:30px}.navlinks a{text-decoration:none;font-size:12px;color:#c3c9cd;position:relative}.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;background:var(--red);transition:.35s}.navlinks a:hover:after{right:0}.navright{display:flex;align-items:center;gap:13px}.navphone{text-decoration:none;font-size:12px;font-weight:800}.pill{border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:11px 16px;text-decoration:none;font-size:11px;font-weight:800}.pill.red{background:var(--red);border-color:var(--red)}.hamb{display:none;background:none;border:0;color:white;font-size:25px}
-.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#050607}.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,#030405 0%,rgba(3,4,5,.82) 27%,rgba(3,4,5,.2) 62%,rgba(3,4,5,.65) 100%),linear-gradient(0deg,#040506 0%,transparent 34%,rgba(0,0,0,.3) 100%),url("https://jpguinchotatui.com.br/assets/hero-tow-truck-CPViE9gb.jpg");background-size:cover;background-position:center;transform:scale(1.06);animation:heroZoom 12s ease-out forwards}.hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 65% 48%,rgba(255,66,20,.24),transparent 18%),linear-gradient(110deg,transparent 45%,rgba(255,40,30,.07),transparent 70%)}@keyframes heroZoom{to{transform:scale(1)}}.rain{position:absolute;inset:0;opacity:.17;background-image:linear-gradient(110deg,transparent 0 48%,rgba(255,255,255,.35) 49%,transparent 50%);background-size:7px 22px;animation:rain 1s linear infinite}@keyframes rain{to{background-position:30px 100px}}.hero-content{position:relative;z-index:3;width:min(850px,90%);margin:0 clamp(20px,7vw,110px) 10vh}.kicker{font-size:11px;letter-spacing:4px;color:#ff4938;font-weight:800;display:flex;align-items:center;gap:10px}.kicker:before{content:"";width:42px;height:2px;background:var(--red)}h1{font-family:"Barlow Condensed";font-size:clamp(70px,10vw,150px);line-height:.78;letter-spacing:-3px;margin:18px 0 25px;text-transform:uppercase}h1 span{color:var(--red);text-shadow:0 0 40px rgba(255,43,43,.18)}.hero-sub{max-width:570px;color:#c1c7ca;line-height:1.7;font-size:14px}.hero-cta{display:flex;gap:12px;margin:30px 0 25px}.cta{border:0;border-radius:4px;padding:16px 22px;font-weight:900;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:.3s var(--ease)}.cta:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,.35)}.cta.red{background:var(--red)}.cta.green{background:var(--green);color:#02100a}.cta.dark{border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.25);backdrop-filter:blur(8px)}.hero-meta{display:flex;gap:30px;color:#879096;font-size:10px;letter-spacing:1px}.hero-meta b{color:white}.scroll{position:absolute;right:4vw;bottom:30px;z-index:4;writing-mode:vertical-rl;font-size:9px;letter-spacing:4px;color:#8b949a}.scroll:after{content:"";display:block;width:1px;height:50px;background:#ff302f;margin:10px auto 0}
-.ticker{height:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:#080a0c;white-space:nowrap}.ticker-track{height:100%;display:flex;align-items:center;gap:50px;width:max-content;animation:ticker 22s linear infinite;color:#a9b0b5;font-size:10px;letter-spacing:2px}.ticker-track b{color:var(--red)}@keyframes ticker{to{transform:translateX(-50%)}}
-.section{padding:130px clamp(20px,7vw,110px);position:relative}.eyebrow{color:var(--red);font-size:10px;letter-spacing:3px;font-weight:900;margin-bottom:13px}.section-title{font-family:"Barlow Condensed";font-size:clamp(52px,7vw,95px);line-height:.84;text-transform:uppercase;margin:0;letter-spacing:-1px}.section-title span{color:var(--red)}.section-intro{color:#858e94;max-width:620px;line-height:1.7;font-size:13px}
-.services{background:linear-gradient(180deg,#050607,#090c0f)}.service-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:55px}.service{min-height:300px;position:relative;overflow:hidden;border:1px solid var(--line);background:#0a0d10;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;transition:.5s var(--ease)}.service:nth-child(1){grid-column:span 7}.service:nth-child(2){grid-column:span 5}.service:nth-child(3),.service:nth-child(4),.service:nth-child(5){grid-column:span 4}.service:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(255,45,45,.22),transparent 25%),linear-gradient(180deg,transparent 25%,#080a0c 100%)}.service:after{content:"";position:absolute;left:-100%;bottom:0;width:70%;height:1px;background:var(--red);transition:.7s var(--ease)}.service:hover{transform:translateY(-8px);border-color:rgba(255,45,45,.5)}.service:hover:after{left:0}.service-num{position:absolute;top:20px;right:22px;font:800 50px "Barlow Condensed";color:rgba(255,255,255,.06)}.service-content{position:relative;z-index:2}.service-icon{color:var(--red);font-size:29px;margin-bottom:28px}.service h3{font:700 29px "Barlow Condensed";margin:0 0 7px}.service p{font-size:11px;line-height:1.6;color:#858e94;max-width:360px;margin:0}.service-link{margin-top:18px;font-size:10px;font-weight:800;color:#fff;text-decoration:none}
-.mission{min-height:720px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;background:#050607;overflow:hidden}.mission-art{height:530px;position:relative;background:url("https://lebeccatowingcompany.com/__static/production-webdotcom-4/214/1674214/QJLRrBud/cac93711105749a3bb997bee2825b6df") center/cover;border:1px solid var(--line);box-shadow:30px 30px 0 rgba(255,43,43,.06)}.mission-art:before{content:"24/7";position:absolute;left:-35px;bottom:35px;font:900 110px "Barlow Condensed";color:rgba(255,255,255,.08);writing-mode:vertical-rl}.mission-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,5,6,.1),rgba(4,5,6,.7)),radial-gradient(circle at 70% 45%,transparent,rgba(4,5,6,.55))}.mission-copy h2{font:800 clamp(55px,6vw,85px) "Barlow Condensed";line-height:.82;text-transform:uppercase;margin:0 0 25px}.mission-copy h2 span{color:var(--red)}.mission-copy p{color:#929ba1;line-height:1.8;font-size:13px;max-width:560px}.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}.benefit{border-top:1px solid var(--line);padding-top:15px}.benefit b{font-size:12px}.benefit p{font-size:10px;margin:7px 0 0;color:#737d83;line-height:1.5}
-.process{background:#080a0c}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px;border-top:1px solid var(--line)}.step{padding:28px 22px;border-right:1px solid var(--line);min-height:190px}.step:last-child{border-right:0}.step-number{font:800 48px "Barlow Condensed";color:var(--red)}.step h3{font:700 22px "Barlow Condensed";margin:12px 0 6px}.step p{font-size:10px;color:#7e878d;line-height:1.6}
-.enquiry{min-height:800px;display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center;background:linear-gradient(135deg,#07090b,#0b0e11)}.enquiry-art{position:absolute;inset:0;opacity:.13;background:url("https://www.guinchoembalneario.com.br/lovable-uploads/hero-background.png") center/cover;filter:grayscale(.7)}.enquiry>.inner,.enquiry>.form-wrap{position:relative;z-index:2}.enquiry h2{font:800 clamp(65px,8vw,105px) "Barlow Condensed";line-height:.8;text-transform:uppercase;margin:0 0 25px}.enquiry h2 span{color:var(--red)}.contact-box{margin-top:35px;display:flex;flex-direction:column;gap:14px}.contact-box a{text-decoration:none;font-size:13px;font-weight:700}.contact-box a:first-child{color:var(--green)}.form-wrap{max-width:620px;margin-left:auto;width:100%}.form{background:rgba(5,7,9,.84);border:1px solid rgba(255,255,255,.12);padding:32px;backdrop-filter:blur(20px);box-shadow:0 30px 90px rgba(0,0,0,.5)}.form-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.form-top h3{font:700 28px "Barlow Condensed";margin:0}.live{font-size:9px;color:#a9b0b5;letter-spacing:1px}.live i{display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:6px;box-shadow:0 0 12px var(--green)}.field{margin-bottom:15px}.field label{display:block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#929ba1;margin-bottom:7px}.field input,.field textarea{width:100%;background:#0b1014;border:1px solid #222b31;color:white;border-radius:3px;padding:14px;font:500 12px Inter;outline:0}.field input:focus,.field textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(255,43,43,.07)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form textarea{min-height:85px;resize:vertical}.form .cta{width:100%;justify-content:center;margin-top:4px}.form-note{font-size:9px;color:#606a70;text-align:center;line-height:1.5;margin:12px 0 0}.status{font-size:10px;text-align:center;min-height:14px;color:#ff8b80;margin-top:9px}
-footer{padding:35px clamp(20px,7vw,110px);border-top:1px solid var(--line);background:#030405;display:flex;align-items:center;justify-content:space-between;color:#737d83;font-size:10px}.footer-logo{font:800 20px "Barlow Condensed";color:white}.footer-logo span{color:var(--red)}.float-actions{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;flex-direction:column;gap:8px}.float-actions a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:.3s}.float-actions a:hover{transform:scale(1.08)}.float-wa{background:var(--green);color:#03100a}.float-call{background:var(--red);color:white}.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(14px);z-index:80;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal-card{width:min(520px,100%);background:#080b0e;border:1px solid rgba(255,255,255,.14);padding:30px;box-shadow:0 30px 100px #000}.modal-card h3{font:800 45px "Barlow Condensed";margin:0 0 8px}.modal-card p{font-size:11px;color:#7e878d;line-height:1.6}.close{float:right;background:none;border:0;color:#aaa;font-size:24px;cursor:pointer}.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.reveal.show{opacity:1;transform:none}.delay1{transition-delay:.08s}.delay2{transition-delay:.16s}.delay3{transition-delay:.24s}
-@media(max-width:1000px){.navlinks,.navright{display:none}.hamb{display:block}.hero-content{margin-bottom:9vh}.mission,.enquiry{grid-template-columns:1fr}.mission-art{height:430px}.process-grid{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step{border-bottom:1px solid var(--line)}.service:nth-child(n){grid-column:span 6}.service:nth-child(1){grid-column:span 12}.service:nth-child(2){grid-column:span 6}.enquiry{gap:45px}.form-wrap{margin:0;max-width:none}}
-@media(max-width:620px){.nav{height:65px;padding:0 18px}.logo-text{font-size:17px}.hero{min-height:780px}.hero-bg{background-position:58% center}.hero-content{margin:0 20px 10vh}.kicker{font-size:9px;letter-spacing:2px}.kicker:before{width:25px}h1{font-size:68px;letter-spacing:-2px}.hero-sub{font-size:12px}.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .cta{justify-content:center}.hero-meta{gap:12px;flex-wrap:wrap;font-size:8px}.scroll{display:none}.section{padding:85px 20px}.section-title{font-size:60px}.service-grid{display:block}.service{margin-bottom:10px;min-height:230px}.mission{display:flex;flex-direction:column;padding-top:85px}.mission-art{width:100%;height:340px}.mission-copy h2{font-size:64px}.benefit-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.step{border-right:0!important}.enquiry{padding-top:85px}.enquiry h2{font-size:70px}.form{padding:20px}.row{grid-template-columns:1fr}footer{flex-direction:column;gap:14px;text-align:center}.float-actions{right:13px;bottom:13px}.ticker-track{animation-duration:17s}}
-@media(pointer:fine){.cursor,.cursor-dot{display:block}}
+/* =========================================================
+   IYARKAI SERVICE
+   CINEMATIC SINGLE-FILE WEBSITE
+========================================================= */
+
+:root{
+  --bg:#050608;
+  --bg2:#090b0f;
+  --panel:#0c0f14;
+  --panel2:#10141b;
+  --line:rgba(255,255,255,.10);
+  --text:#f5f7fa;
+  --muted:#9da5b1;
+  --white:#fff;
+
+  --red:#ff304f;
+  --red2:#ff526a;
+
+  --blue:#39a8ff;
+  --cyan:#35d8ff;
+
+  --green:#27d98b;
+  --amber:#ffad33;
+
+  --shadow:0 25px 80px rgba(0,0,0,.55);
+
+  --radius:24px;
+  --max:1220px;
+}
+
+/* RESET */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg);
+}
+
+body{
+  background:
+    radial-gradient(circle at 50% -10%,rgba(255,48,79,.10),transparent 35%),
+    var(--bg);
+  color:var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9998;
+  opacity:.045;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 2px,
+      #fff 3px
+    );
+  mix-blend-mode:overlay;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(var(--max),calc(100% - 32px));
+  margin:auto;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,6,8,.96),
+      rgba(5,6,8,.72)
+    );
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.nav{
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.brand-mark{
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,48,79,.65);
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle,#ff304f 0 8%,transparent 9%),
+    rgba(255,48,79,.08);
+  box-shadow:
+    0 0 30px rgba(255,48,79,.16),
+    inset 0 0 20px rgba(255,48,79,.08);
+  flex-shrink:0;
+}
+
+.brand-mark span{
+  width:15px;
+  height:2px;
+  background:#fff;
+  box-shadow:
+    0 -5px 0 rgba(255,255,255,.8),
+    0 5px 0 rgba(255,255,255,.8);
+}
+
+.brand-text strong{
+  display:block;
+  font-size:13px;
+  letter-spacing:.16em;
+  line-height:1.1;
+}
+
+.brand-text small{
+  color:#737c88;
+  font-size:8px;
+  letter-spacing:.20em;
+}
+
+.nav-links{
+  display:none;
+  align-items:center;
+  gap:20px;
+}
+
+.nav-links a{
+  font-size:10px;
+  letter-spacing:.12em;
+  color:#9ca5b1;
+  transition:.25s ease;
+}
+
+.nav-links a:hover{
+  color:#fff;
+}
+
+.nav-call{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid rgba(255,48,79,.40);
+  padding:10px 13px;
+  border-radius:999px;
+  background:rgba(255,48,79,.08);
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.nav-call-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#ff304f;
+  box-shadow:0 0 12px #ff304f;
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.45;transform:scale(.75)}
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.hero-media{
+  position:absolute;
+  inset:0;
+  z-index:-3;
+}
+
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:
+    saturate(.92)
+    contrast(1.08)
+    brightness(.57);
+  transform:scale(1.08);
+  animation:heroZoom 15s ease-out forwards;
+}
+
+@keyframes heroZoom{
+  from{transform:scale(1.12)}
+  to{transform:scale(1)}
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,3,5,.50) 0%,
+      rgba(2,3,5,.08) 35%,
+      rgba(2,3,5,.58) 62%,
+      rgba(2,3,5,1) 100%
+    );
+}
+
+.hero-glow{
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  right:-240px;
+  top:18%;
+  background:rgba(255,48,79,.13);
+  filter:blur(100px);
+  pointer-events:none;
+}
+
+.hero-content{
+  width:100%;
+  padding:
+    140px 0
+    max(55px,env(safe-area-inset-bottom));
+}
+
+.hero-kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:22px;
+  color:#cbd1d9;
+  font-size:10px;
+  letter-spacing:.28em;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.hero-kicker::before{
+  content:"";
+  width:30px;
+  height:1px;
+  background:var(--red);
+  box-shadow:0 0 14px var(--red);
+}
+
+.hero h1{
+  max-width:850px;
+  font-size:clamp(48px,12vw,105px);
+  line-height:.88;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+  font-weight:950;
+}
+
+.hero h1 span{
+  display:block;
+}
+
+.hero h1 .accent{
+  color:#fff;
+  text-shadow:
+    0 0 40px rgba(255,48,79,.25);
+}
+
+.hero-sub{
+  margin-top:26px;
+  max-width:580px;
+  color:#c2c8d0;
+  font-size:clamp(13px,2vw,18px);
+  letter-spacing:.10em;
+  font-weight:700;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:30px;
+}
+
+.btn{
+  min-height:50px;
+  padding:0 20px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:.25s ease;
+  border:1px solid transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  color:#fff;
+  background:var(--red);
+  box-shadow:
+    0 12px 35px rgba(255,48,79,.24);
+}
+
+.btn-secondary{
+  color:#fff;
+  border-color:rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(12px);
+}
+
+.hero-status{
+  margin-top:42px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#89929e;
+  font-size:10px;
+  letter-spacing:.12em;
+}
+
+.status-light{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#28dc89;
+  box-shadow:0 0 15px #28dc89;
+}
+
+/* =========================================================
+   TICKER
+========================================================= */
+
+.ticker{
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  background:#080a0d;
+}
+
+.ticker-track{
+  width:max-content;
+  display:flex;
+  gap:50px;
+  padding:15px 0;
+  animation:ticker 28s linear infinite;
+}
+
+.ticker-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  color:#7d8691;
+  font-size:9px;
+  letter-spacing:.22em;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.ticker-item i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--red);
+  box-shadow:0 0 10px var(--red);
+}
+
+@keyframes ticker{
+  to{transform:translateX(-50%)}
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+  position:relative;
+}
+
+.section{
+  padding:100px 0;
+}
+
+.section-head{
+  margin-bottom:38px;
+}
+
+.section-index{
+  color:var(--red);
+  font-size:10px;
+  letter-spacing:.24em;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.section-title{
+  font-size:clamp(34px,7vw,66px);
+  line-height:.96;
+  letter-spacing:-.045em;
+  text-transform:uppercase;
+}
+
+.section-desc{
+  margin-top:16px;
+  max-width:650px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+.service-card{
+  min-height:380px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius);
+  background:#0b0d11;
+  isolation:isolate;
+  box-shadow:var(--shadow);
+  transition:
+    transform .45s cubic-bezier(.2,.7,.2,1),
+    border-color .35s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(255,255,255,.22);
+}
+
+.service-image{
+  position:absolute;
+  inset:0;
+  z-index:-3;
+}
+
+.service-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:
+    transform 1s cubic-bezier(.2,.7,.2,1),
+    filter .5s ease;
+  filter:
+    brightness(.54)
+    saturate(.85)
+    contrast(1.08);
+}
+
+.service-card:hover .service-image img{
+  transform:scale(1.07);
+  filter:
+    brightness(.66)
+    saturate(1)
+    contrast(1.08);
+}
+
+.service-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.18) 35%,
+      rgba(0,0,0,.92) 100%
+    );
+}
+
+.service-card::after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  right:-80px;
+  top:-80px;
+  border-radius:50%;
+  background:var(--card-glow,rgba(255,48,79,.18));
+  filter:blur(50px);
+  z-index:-1;
+}
+
+.service-content{
+  height:100%;
+  min-height:380px;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.service-number{
+  position:absolute;
+  top:22px;
+  left:24px;
+  font-size:10px;
+  letter-spacing:.18em;
+  color:rgba(255,255,255,.55);
+  font-weight:900;
+}
+
+.service-tag{
+  align-self:flex-start;
+  margin-bottom:auto;
+  margin-top:2px;
+  padding:6px 9px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  background:rgba(0,0,0,.22);
+  backdrop-filter:blur(10px);
+  font-size:8px;
+  letter-spacing:.16em;
+  font-weight:900;
+}
+
+.service-content h3{
+  font-size:clamp(26px,6vw,42px);
+  line-height:.94;
+  letter-spacing:-.04em;
+  text-transform:uppercase;
+}
+
+.service-content p{
+  margin-top:10px;
+  color:#b7bec8;
+  font-size:12px;
+  max-width:470px;
+}
+
+.service-link{
+  margin-top:18px;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.service-link span{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.20);
+}
+
+/* =========================================================
+   FEATURE SPLIT
+========================================================= */
+
+.feature{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  align-items:stretch;
+}
+
+.feature-media{
+  min-height:420px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,.10);
+  background:#0c0f14;
+}
+
+.feature-media img{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  object-fit:cover;
+  filter:
+    brightness(.65)
+    saturate(.82)
+    contrast(1.05);
+  transition:transform 1s ease;
+}
+
+.feature:hover .feature-media img{
+  transform:scale(1.04);
+}
+
+.feature-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(0,0,0,.7)
+    );
+}
+
+.feature-label{
+  position:absolute;
+  z-index:2;
+  left:22px;
+  bottom:22px;
+  font-size:9px;
+  letter-spacing:.18em;
+  font-weight:900;
+  color:#fff;
+}
+
+.feature-copy{
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(
+      circle at 90% 0,
+      rgba(255,48,79,.10),
+      transparent 35%
+    ),
+    #0b0e13;
+}
+
+.feature-copy .eyebrow{
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+}
+
+.feature-copy h2{
+  margin-top:14px;
+  font-size:clamp(32px,7vw,62px);
+  line-height:.94;
+  letter-spacing:-.045em;
+  text-transform:uppercase;
+}
+
+.feature-copy p{
+  margin-top:18px;
+  color:#aeb6c0;
+  font-size:14px;
+}
+
+.feature-list{
+  list-style:none;
+  margin-top:25px;
+  display:grid;
+  gap:12px;
+}
+
+.feature-list li{
+  display:flex;
+  gap:11px;
+  color:#d9dee5;
+  font-size:12px;
+}
+
+.feature-list li::before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+  box-shadow:0 0 12px rgba(255,48,79,.8);
+  margin-top:7px;
+  flex-shrink:0;
+}
+
+/* =========================================================
+   FREEZER
+========================================================= */
+
+.freezer-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+.freezer-card{
+  min-height:460px;
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.11);
+  background:#0a0d11;
+}
+
+.freezer-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:
+    brightness(.55)
+    contrast(1.05);
+  transition:transform 1s ease;
+}
+
+.freezer-card:hover img{
+  transform:scale(1.05);
+}
+
+.freezer-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.02),
+      rgba(0,0,0,.88) 100%
+    );
+}
+
+.freezer-content{
+  position:absolute;
+  z-index:2;
+  left:25px;
+  right:25px;
+  bottom:25px;
+}
+
+.freezer-badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.20);
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(10px);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.16em;
+}
+
+.freezer-card.premium .freezer-badge{
+  border-color:rgba(255,190,70,.45);
+  color:#ffd98b;
+}
+
+.freezer-content h3{
+  margin-top:12px;
+  font-size:36px;
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.freezer-content p{
+  margin-top:10px;
+  color:#b9c0c8;
+  font-size:12px;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.process-step{
+  padding:24px;
+  min-height:180px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;
+  background:#0b0e13;
+  position:relative;
+  overflow:hidden;
+}
+
+.process-step::after{
+  content:"";
+  position:absolute;
+  right:-40px;
+  bottom:-70px;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:rgba(255,48,79,.08);
+  filter:blur(35px);
+}
+
+.process-number{
+  color:var(--red);
+  font-size:10px;
+  letter-spacing:.2em;
+  font-weight:900;
+}
+
+.process-step h3{
+  margin-top:25px;
+  font-size:21px;
+  text-transform:uppercase;
+}
+
+.process-step p{
+  margin-top:7px;
+  color:#929ba7;
+  font-size:12px;
+}
+
+/* =========================================================
+   ENQUIRY
+========================================================= */
+
+.enquiry-wrap{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+
+.enquiry-intro{
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.09);
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255,48,79,.13),
+      transparent 38%
+    ),
+    #0b0e13;
+}
+
+.enquiry-intro h2{
+  font-size:clamp(36px,8vw,70px);
+  line-height:.92;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+}
+
+.enquiry-intro p{
+  margin-top:18px;
+  color:#9fa8b3;
+  font-size:13px;
+}
+
+.contact-stack{
+  margin-top:28px;
+  display:grid;
+  gap:10px;
+}
+
+.contact-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.025);
+}
+
+.contact-row small{
+  display:block;
+  color:#727b87;
+  font-size:8px;
+  letter-spacing:.16em;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.contact-row strong{
+  display:block;
+  margin-top:2px;
+  font-size:15px;
+}
+
+.contact-btn{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--red);
+  font-size:15px;
+  flex-shrink:0;
+}
+
+.form{
+  padding:25px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius);
+  background:#0a0d11;
+}
+
+.form-title{
+  font-size:12px;
+  letter-spacing:.16em;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.field{
+  display:grid;
+  gap:7px;
+}
+
+.field label{
+  color:#7e8793;
+  font-size:8px;
+  letter-spacing:.16em;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid rgba(255,255,255,.10);
+  outline:none;
+  color:#f5f7fa;
+  background:#11151b;
+  border-radius:13px;
+  padding:13px 14px;
+  font-size:13px;
+  transition:.25s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:rgba(255,48,79,.60);
+  box-shadow:0 0 0 3px rgba(255,48,79,.08);
+}
+
+.field textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.field select option{
+  background:#101319;
+}
+
+.form-submit{
+  margin-top:15px;
+  width:100%;
+  border:0;
+  cursor:pointer;
+}
+
+.form-note{
+  margin-top:10px;
+  text-align:center;
+  color:#68717d;
+  font-size:9px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.final-cta{
+  padding:100px 0 120px;
+}
+
+.cta-box{
+  min-height:430px;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,.11);
+  display:flex;
+  align-items:flex-end;
+  background:#0b0e13;
+}
+
+.cta-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(255,48,79,.22),
+      transparent 48%
+    );
+  z-index:1;
+}
+
+.cta-box::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.92)
+    );
+  z-index:1;
+}
+
+.cta-bg{
+  position:absolute;
+  inset:0;
+}
+
+.cta-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:
+    brightness(.45)
+    saturate(.8);
+}
+
+.cta-content{
+  position:relative;
+  z-index:2;
+  padding:32px;
+}
+
+.cta-content .eyebrow{
+  color:#ff6279;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.20em;
+}
+
+.cta-content h2{
+  margin-top:13px;
+  font-size:clamp(42px,9vw,86px);
+  line-height:.88;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+}
+
+.cta-content p{
+  max-width:520px;
+  margin-top:17px;
+  color:#c0c7d0;
+  font-size:13px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 0 100px;
+  background:#040507;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:25px;
+}
+
+.footer-brand{
+  font-size:20px;
+  font-weight:950;
+  letter-spacing:-.04em;
+}
+
+.footer-brand span{
+  color:var(--red);
+}
+
+.footer-text{
+  color:#69727e;
+  font-size:11px;
+  max-width:400px;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 20px;
+}
+
+.footer-links a{
+  color:#858e99;
+  font-size:9px;
+  letter-spacing:.12em;
+  font-weight:800;
+}
+
+.copyright{
+  margin-top:30px;
+  color:#4d5560;
+  font-size:8px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   FLOATING ACTIONS
+========================================================= */
+
+.floating{
+  position:fixed;
+  z-index:900;
+  right:15px;
+  bottom:max(15px,env(safe-area-inset-bottom));
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+
+.float-btn{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.15);
+  color:#fff;
+  box-shadow:0 12px 35px rgba(0,0,0,.4);
+  font-weight:900;
+  font-size:18px;
+  transition:.25s ease;
+}
+
+.float-btn:hover{
+  transform:scale(1.08);
+}
+
+.float-call{
+  background:#161a20;
+}
+
+.float-wa{
+  background:#17a866;
+  box-shadow:
+    0 10px 35px rgba(23,168,102,.28);
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(min-width:700px){
+
+  .container{
+    width:min(var(--max),calc(100% - 70px));
+  }
+
+  .nav-links{
+    display:flex;
+  }
+
+  .hero-content{
+    padding-top:170px;
+    padding-bottom:110px;
+  }
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-card:first-child{
+    grid-column:span 2;
+    min-height:500px;
+  }
+
+  .service-card:first-child .service-content{
+    min-height:500px;
+  }
+
+  .feature{
+    grid-template-columns:1.15fr .85fr;
+  }
+
+  .freezer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .process{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .enquiry-wrap{
+    grid-template-columns:.85fr 1.15fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .field.full{
+    grid-column:span 2;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr auto;
+    align-items:start;
+  }
+}
+
+@media(min-width:1050px){
+
+  .services-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .service-card:first-child{
+    grid-column:span 2;
+  }
+
+  .service-card{
+    min-height:430px;
+  }
+
+  .service-content{
+    min-height:430px;
+  }
+
+  .hero-content{
+    padding-bottom:120px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY / PERFORMANCE
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto !important;
+    animation:none !important;
+    transition:none !important;
+  }
+
+  .reveal{
+    opacity:1;
+    transform:none;
+  }
+}
 </style>
 </head>
-<body>
-<div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
 
-<header class="nav">
-<a class="logo" href="#home"><span class="logo-symbol">↗</span><span class="logo-text">IYARKAI <b>SERVICE</b><small>RECOVERY & TOWING</small></span></a>
-<nav class="navlinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#why">Why Us</a><a href="#process">How It Works</a><a href="#enquiry">Contact</a></nav>
-<div class="navright"><a class="navphone" href="tel:+919597586099">☎ 9489869164</a><a class="pill red" href="#enquiry">ENQUIRE NOW</a></div>
-<button class="hamb" id="hamb">☰</button>
+<body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="topbar">
+
+  <div class="container nav">
+
+    <a href="#home" class="brand">
+
+      <div class="brand-mark">
+        <span></span>
+      </div>
+
+      <div class="brand-text">
+        <strong>IYARKAI SERVICE</strong>
+        <small>EMERGENCY • TRANSPORT • RECOVERY</small>
+      </div>
+
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#ambulance">AMBULANCE</a>
+      <a href="#freezer">FREEZER</a>
+      <a href="#recovery">RECOVERY</a>
+      <a href="#enquiry">ENQUIRY</a>
+    </nav>
+
+    <a
+      class="nav-call"
+      href="tel:+919345658295"
+      aria-label="Call IYARKAI SERVICE"
+    >
+      <span class="nav-call-dot"></span>
+      9345658295
+    </a>
+
+  </div>
+
 </header>
 
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
 <main>
-<section class="hero" id="home">
-<div class="hero-bg"></div><div class="rain"></div>
-<div class="hero-content reveal">
-<div class="kicker">24/7 RECOVERY VEHICLE SERVICE</div>
-<h1>WE MOVE<br><span>WHAT'S</span><br>STRANDED.</h1>
-<p class="hero-sub">Breakdown. Accident. Transport. When your vehicle cannot move, we do. Professional recovery support with fast response and safe handling.</p>
-<div class="hero-cta"><a class="cta red" href="#enquiry">REQUEST RECOVERY →</a><a class="cta green" href="https://wa.me/919489869164?text=Hello%20I%20need%20vehicle%20recovery%20assistance." target="_blank" rel="noopener">WHATSAPP 9489869164</a><a class="cta dark" href="tel:+919489869164">CALL NOW</a></div>
-<div class="hero-meta"><span><b>24/7</b> RESPONSE</span><span><b>SAFE</b> HANDLING</span><span><b>TN + NEARBY</b> STATES</span></div>
-</div><div class="scroll">SCROLL TO EXPLORE</div>
+
+<section id="home" class="hero">
+
+  <div class="hero-media">
+    <img
+      src="https://images.pexels.com/videos/27974834/ambulance-27974834.jpeg?auto=compress&dpr=1&h=1200&w=1920"
+      alt="Emergency ambulance at night"
+      fetchpriority="high"
+    >
+  </div>
+
+  <div class="hero-glow"></div>
+
+  <div class="container hero-content">
+
+    <div class="hero-kicker">
+      24/7 SERVICE • CALL / WHATSAPP
+    </div>
+
+    <h1>
+      <span>CARE.</span>
+      <span>TRANSFER.</span>
+      <span class="accent">RECOVER.</span>
+    </h1>
+
+    <p class="hero-sub">
+      24/7 EMERGENCY & TRANSPORT SERVICES
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        class="btn btn-primary"
+        href="tel:+919345658295"
+      >
+        ☎ CALL NOW
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20service."
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="#enquiry"
+      >
+        SEND ENQUIRY
+      </a>
+
+    </div>
+
+    <div class="hero-status">
+      <span class="status-light"></span>
+      AVAILABLE FOR ENQUIRIES • SERVICE AVAILABILITY CONFIRMED ON CALL
+    </div>
+
+  </div>
+
 </section>
 
-<div class="ticker"><div class="ticker-track"><span><b>●</b> RECOVERY</span><span>BREAKDOWN ASSISTANCE</span><span><b>●</b> ACCIDENT RECOVERY</span><span>LONG DISTANCE TRANSPORT</span><span><b>●</b> TWO-WHEELER RECOVERY</span><span>HEAVY VEHICLE RECOVERY</span><span><b>●</b> RECOVERY</span><span>BREAKDOWN ASSISTANCE</span><span><b>●</b> ACCIDENT RECOVERY</span><span>LONG DISTANCE TRANSPORT</span></div></div>
 
-<section class="section services" id="services">
-<div class="reveal"><div class="eyebrow">01 / WHAT WE DO</div><h2 class="section-title">RECOVERY<br><span>WITHOUT</span><br>THE DRAMA.</h2><p class="section-intro">From a stranded car on a dark highway to planned vehicle transport, our recovery service is designed around one thing: getting the vehicle safely where it needs to go.</p></div>
-<div class="service-grid">
-<article class="service reveal"><div class="service-num">01</div><div class="service-content"><div class="service-icon">▣</div><h3>Car Breakdown Recovery</h3><p>Emergency recovery for cars that have stopped, broken down or become unsafe to drive.</p><a class="service-link" href="#enquiry">REQUEST →</a></div></article>
-<article class="service reveal delay1"><div class="service-num">02</div><div class="service-content"><div class="service-icon">⚠</div><h3>Accident Recovery</h3><p>Careful loading and transportation for accident-damaged vehicles.</p><a class="service-link" href="#enquiry">REQUEST →</a></div></article>
-<article class="service reveal delay1"><div class="service-num">03</div><div class="service-content"><div class="service-icon">◈</div><h3>Two-Wheeler Recovery</h3><p>Bikes and scooters recovered with appropriate handling.</p><a class="service-link" href="#enquiry">REQUEST →</a></div></article>
-<article class="service reveal delay2"><div class="service-num">04</div><div class="service-content"><div class="service-icon">▰</div><h3>Heavy Vehicle Recovery</h3><p>Support for trucks, buses and commercial vehicles.</p><a class="service-link" href="#enquiry">REQUEST →</a></div></article>
-<article class="service reveal delay3"><div class="service-num">05</div><div class="service-content"><div class="service-icon">⌁</div><h3>Long Distance Transport</h3><p>Vehicle movement across Tamil Nadu and nearby states.</p><a class="service-link" href="#enquiry">REQUEST →</a></div></article>
+<!-- =======================================================
+     TICKER
+======================================================= -->
+
+<div class="ticker">
+
+  <div class="ticker-track">
+
+    <div class="ticker-item">
+      <i></i> AMBULANCE
+    </div>
+
+    <div class="ticker-item">
+      <i></i> ICU AMBULANCE
+    </div>
+
+    <div class="ticker-item">
+      <i></i> BODY TRANSPORT
+    </div>
+
+    <div class="ticker-item">
+      <i></i> FREEZER BOX
+    </div>
+
+    <div class="ticker-item">
+      <i></i> VEHICLE RECOVERY
+    </div>
+
+    <div class="ticker-item">
+      <i></i> LONG DISTANCE TRANSPORT
+    </div>
+
+    <div class="ticker-item">
+      <i></i> 24/7 ENQUIRY
+    </div>
+
+    <!-- duplicate for seamless ticker -->
+
+    <div class="ticker-item">
+      <i></i> AMBULANCE
+    </div>
+
+    <div class="ticker-item">
+      <i></i> ICU AMBULANCE
+    </div>
+
+    <div class="ticker-item">
+      <i></i> BODY TRANSPORT
+    </div>
+
+    <div class="ticker-item">
+      <i></i> FREEZER BOX
+    </div>
+
+    <div class="ticker-item">
+      <i></i> VEHICLE RECOVERY
+    </div>
+
+    <div class="ticker-item">
+      <i></i> LONG DISTANCE TRANSPORT
+    </div>
+
+    <div class="ticker-item">
+      <i></i> 24/7 ENQUIRY
+    </div>
+
+  </div>
+
 </div>
+
+
+<!-- =======================================================
+     SERVICES
+======================================================= -->
+
+<section id="services" class="section">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-index">
+        01 / SERVICES
+      </div>
+
+      <h2 class="section-title">
+        ONE SERVICE.<br>
+        MANY NEEDS.
+      </h2>
+
+      <p class="section-desc">
+        Emergency mobility, patient transportation, respectful body
+        transportation, freezer box support and vehicle recovery —
+        all through one enquiry point.
+      </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+      <!-- AMBULANCE -->
+
+      <article
+        class="service-card reveal"
+        style="--card-glow:rgba(255,48,79,.22)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://assets.st-note.com/production/uploads/images/220875759/58dd3ffb01264500bd8b21557eaae380.jpg"
+            alt="Emergency ambulance at night"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">01</span>
+
+          <span class="service-tag">
+            EMERGENCY MEDICAL TRANSPORT
+          </span>
+
+          <h3>Ambulance</h3>
+
+          <p>
+            Patient transportation, hospital transfer,
+            home-to-hospital and hospital-to-hospital journeys.
+          </p>
+
+          <a href="#ambulance" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ICU -->
+
+      <article
+        class="service-card reveal"
+        style="--card-glow:rgba(57,168,255,.22)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://www.ambuready.in/assets/img/icu-ambulance.webp"
+            alt="ICU ambulance interior"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">02</span>
+
+          <span class="service-tag">
+            CRITICAL PATIENT TRANSFER
+          </span>
+
+          <h3>ICU Ambulance</h3>
+
+          <p>
+            For critical patient transfers. Equipment and
+            availability are confirmed during enquiry.
+          </p>
+
+          <a href="#icu" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- BODY TRANSPORT -->
+
+      <article
+        class="service-card reveal"
+        style="--card-glow:rgba(170,170,170,.14)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://transportpokojnika.com/pogrebni-kombi-sa-sandukom.jpg"
+            alt="Respectful body transportation vehicle"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">03</span>
+
+          <span class="service-tag">
+            RESPECTFUL TRANSPORT
+          </span>
+
+          <h3>Body Transportation</h3>
+
+          <p>
+            Respectful transportation from hospital, home or
+            other location to the required destination.
+          </p>
+
+          <a href="#bodytransport" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- NORMAL FREEZER -->
+
+      <article
+        class="service-card reveal"
+        style="--card-glow:rgba(57,216,255,.18)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/metal-ss-dead-body-freezer-box-20240619123924747.jpg"
+            alt="Normal freezer box"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">04</span>
+
+          <span class="service-tag">
+            FREEZER BOX
+          </span>
+
+          <h3>Normal</h3>
+
+          <p>
+            Standard freezer box option for required
+            preservation support. Availability confirmed on enquiry.
+          </p>
+
+          <a href="#freezer" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PREMIUM FREEZER -->
+
+      <article
+        class="service-card reveal"
+        style="--card-glow:rgba(255,180,60,.20)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/dead-body-freezer-box-for-hospitalsmedical-colleges20230926115239.jpg"
+            alt="Premium freezer box"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">05</span>
+
+          <span class="service-tag">
+            PREMIUM OPTION
+          </span>
+
+          <h3>Premium</h3>
+
+          <p>
+            Premium freezer box option with availability and
+            specifications confirmed during enquiry.
+          </p>
+
+          <a href="#freezer" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- RECOVERY -->
+
+      <article
+        id="recovery"
+        class="service-card reveal"
+        style="--card-glow:rgba(255,170,50,.22)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://storage.colortasarim.com/images/b416b754-fe7c-41f1-bd66-8fccb3aa7dec.png"
+            alt="Vehicle recovery tow truck at night"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">06</span>
+
+          <span class="service-tag">
+            ROAD ASSISTANCE
+          </span>
+
+          <h3>Vehicle Recovery</h3>
+
+          <p>
+            Breakdown, accident and roadside vehicle recovery
+            enquiries.
+          </p>
+
+          <a href="#recovery-detail" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- LONG DISTANCE -->
+
+      <article
+        class="service-card reveal"
+        style="--card-glow:rgba(100,150,255,.18)"
+      >
+
+        <div class="service-image">
+
+          <img
+            src="https://images.pexels.com/videos/5266051/pexels-photo-5266051.jpeg?auto=compress&dpr=1&h=1000&w=1600"
+            alt="Long distance transport on highway at night"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="service-content">
+
+          <span class="service-number">07</span>
+
+          <span class="service-tag">
+            INTER-DISTRICT / LONG ROUTE
+          </span>
+
+          <h3>Long Distance</h3>
+
+          <p>
+            Long-route transport requirements with route,
+            distance and availability confirmed on enquiry.
+          </p>
+
+          <a href="#longdistance" class="service-link">
+            VIEW SERVICE
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="section mission" id="why">
-<div class="mission-art reveal"></div>
-<div class="mission-copy reveal delay1"><div class="eyebrow">02 / THE PROMISE</div><h2>YOUR VEHICLE.<br><span>OUR PRIORITY.</span></h2><p>Recovery is more than moving a vehicle. It is about reducing stress when something has gone wrong. We focus on clear communication, careful handling and a direct enquiry process through WhatsApp.</p>
-<div class="benefit-grid">
-<div class="benefit"><b>⚡ QUICK RESPONSE</b><p>Send your location and vehicle details directly to the service number.</p></div>
-<div class="benefit"><b>◇ SAFE HANDLING</b><p>Recovery-focused transport instead of improvising at the roadside.</p></div>
-<div class="benefit"><b>₹ CLEAR COMMUNICATION</b><p>Discuss the recovery requirement before confirming the job.</p></div>
-<div class="benefit"><b>⌖ LOCAL + LONG DISTANCE</b><p>Designed for local recovery and planned vehicle movement.</p></div>
-</div></div>
+
+<!-- =======================================================
+     AMBULANCE DETAIL
+======================================================= -->
+
+<section id="ambulance" class="section">
+
+  <div class="container">
+
+    <div class="feature reveal">
+
+      <div class="feature-media">
+
+        <img
+          src="https://images.pexels.com/videos/27974834/ambulance-27974834.jpeg?auto=compress&dpr=1&h=1200&w=1920"
+          alt="Ambulance emergency service"
+          loading="lazy"
+        >
+
+        <span class="feature-label">
+          24/7 AMBULANCE SERVICE
+        </span>
+
+      </div>
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">
+          02 / MEDICAL TRANSPORT
+        </div>
+
+        <h2>
+          Ambulance<br>
+          Service
+        </h2>
+
+        <p>
+          For urgent and planned patient transportation
+          requirements. Contact us with your pickup,
+          destination and timing.
+        </p>
+
+        <ul class="feature-list">
+
+          <li>
+            Home → Hospital
+          </li>
+
+          <li>
+            Hospital → Hospital
+          </li>
+
+          <li>
+            Hospital → Home
+          </li>
+
+          <li>
+            Inter-district / long-distance transfer
+          </li>
+
+          <li>
+            Availability confirmed on call
+          </li>
+
+        </ul>
+
+        <a
+          href="tel:+919345658295"
+          class="btn btn-primary"
+          style="margin-top:25px"
+        >
+          CALL 9345658295
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="section process" id="process">
-<div class="reveal"><div class="eyebrow">03 / SIMPLE PROCESS</div><h2 class="section-title">FROM STUCK<br>TO <span>MOVING.</span></h2><p class="section-intro">No complicated booking system. Send the information that matters and continue the conversation on WhatsApp.</p></div>
-<div class="process-grid">
-<div class="step reveal"><div class="step-number">01</div><h3>ENQUIRE</h3><p>Enter your name, phone number, location and vehicle name.</p></div>
-<div class="step reveal delay1"><div class="step-number">02</div><h3>WHATSAPP</h3><p>The website prepares a structured enquiry for 9489869164.</p></div>
-<div class="step reveal delay2"><div class="step-number">03</div><h3>CONFIRM</h3><p>Discuss the vehicle, location, recovery requirement and price.</p></div>
-<div class="step reveal delay3"><div class="step-number">04</div><h3>RECOVER</h3><p>Coordinate the recovery and vehicle movement.</p></div>
-</div>
+
+<!-- =======================================================
+     ICU
+======================================================= -->
+
+<section id="icu" class="section">
+
+  <div class="container">
+
+    <div class="feature reveal">
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">
+          03 / CRITICAL TRANSFER
+        </div>
+
+        <h2>
+          ICU<br>
+          Ambulance
+        </h2>
+
+        <p>
+          Intended for critical patient transfer requirements.
+          Please provide the patient's transfer requirement
+          while enquiring so availability and equipment can
+          be confirmed.
+        </p>
+
+        <ul class="feature-list">
+
+          <li>
+            Critical patient transfer
+          </li>
+
+          <li>
+            Hospital-to-hospital movement
+          </li>
+
+          <li>
+            Long-distance transfer enquiry
+          </li>
+
+          <li>
+            Availability confirmed before dispatch
+          </li>
+
+        </ul>
+
+        <a
+          href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20an%20ICU%20Ambulance."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          style="margin-top:25px"
+        >
+          WHATSAPP ICU ENQUIRY
+        </a>
+
+      </div>
+
+      <div class="feature-media">
+
+        <img
+          src="https://www.ambuready.in/assets/img/icu-ambulance.webp"
+          alt="ICU ambulance interior"
+          loading="lazy"
+        >
+
+        <span class="feature-label">
+          ICU PATIENT TRANSPORT
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="section enquiry" id="enquiry">
-<div class="enquiry-art"></div>
-<div class="inner reveal"><div class="eyebrow">04 / REQUEST ASSISTANCE</div><h2>NEED A<br><span>RECOVERY?</span></h2><p class="section-intro">Fill in the essentials. Your details are not saved by this website; WhatsApp opens with the enquiry ready for you to send.</p><div class="contact-box"><a href="https://wa.me/919489869164" target="_blank" rel="noopener">◉ WHATSAPP — 9489869164</a><a href="tel:+919489869164">☎ CALL — 9489869164</a><span>◷ Available for enquiries 24/7</span></div></div>
-<div class="form-wrap reveal delay1"><form class="form" id="recoveryForm">
-<div class="form-top"><h3>RECOVERY ENQUIRY</h3><span class="live"><i></i> WHATSAPP READY</span></div>
-<div class="row"><div class="field"><label>Name</label><input id="name" required autocomplete="name" placeholder="Your name"></div><div class="field"><label>Contact Number</label><input id="phone" required inputmode="tel" autocomplete="tel" placeholder="10-digit mobile"></div></div>
-<div class="field"><label>Location</label><input id="location" required placeholder="Current / pickup location"></div>
-<div class="field"><label>Vehicle Name</label><input id="vehicle" required placeholder="e.g. Hyundai Creta"></div>
-<div class="field"><label>Additional Details (optional)</label><textarea id="details" placeholder="Breakdown, accident, transport, etc."></textarea></div>
-<button class="cta green" type="submit">SEND ENQUIRY ON WHATSAPP →</button>
-<div class="status" id="status"></div><p class="form-note">The site does not submit your information to a database. WhatsApp opens on your device with the details you entered.</p>
-</form></div>
+
+<!-- =======================================================
+     BODY TRANSPORT
+======================================================= -->
+
+<section id="bodytransport" class="section">
+
+  <div class="container">
+
+    <div class="feature reveal">
+
+      <div class="feature-media">
+
+        <img
+          src="https://transportpokojnika.com/pogrebni-kombi-sa-sandukom.jpg"
+          alt="Respectful body transportation"
+          loading="lazy"
+        >
+
+        <span class="feature-label">
+          RESPECTFUL TRANSPORTATION
+        </span>
+
+      </div>
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">
+          04 / BODY TRANSPORT
+        </div>
+
+        <h2>
+          Dignified<br>
+          Transfer
+        </h2>
+
+        <p>
+          Respectful transportation arrangements for deceased
+          body transfer requirements between home, hospital
+          and destination locations.
+        </p>
+
+        <ul class="feature-list">
+
+          <li>
+            Hospital → Destination
+          </li>
+
+          <li>
+            Home → Destination
+          </li>
+
+          <li>
+            Inter-district transportation
+          </li>
+
+          <li>
+            Long-distance transportation
+          </li>
+
+          <li>
+            Freezer-assisted arrangements when available
+          </li>
+
+        </ul>
+
+        <a
+          href="#enquiry"
+          class="btn btn-primary"
+          style="margin-top:25px"
+        >
+          MAKE ENQUIRY
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =======================================================
+     FREEZER
+======================================================= -->
+
+<section id="freezer" class="section">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-index">
+        05 / FREEZER BOX
+      </div>
+
+      <h2 class="section-title">
+        NORMAL.<br>
+        PREMIUM.
+      </h2>
+
+      <p class="section-desc">
+        Two freezer box options for different requirements.
+        Availability, specifications and arrangement are
+        confirmed during enquiry.
+      </p>
+
+    </div>
+
+
+    <div class="freezer-grid">
+
+
+      <article class="freezer-card reveal">
+
+        <img
+          src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/metal-ss-dead-body-freezer-box-20240619123924747.jpg"
+          alt="Normal freezer box"
+          loading="lazy"
+        >
+
+        <div class="freezer-content">
+
+          <span class="freezer-badge">
+            STANDARD OPTION
+          </span>
+
+          <h3>
+            Normal<br>
+            Freezer Box
+          </h3>
+
+          <p>
+            Standard option for preservation requirements.
+            Confirm availability before booking.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="freezer-card premium reveal">
+
+        <img
+          src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/dead-body-freezer-box-for-hospitalsmedical-colleges20230926115239.jpg"
+          alt="Premium freezer box"
+          loading="lazy"
+        >
+
+        <div class="freezer-content">
+
+          <span class="freezer-badge">
+            PREMIUM OPTION
+          </span>
+
+          <h3>
+            Premium<br>
+            Freezer Box
+          </h3>
+
+          <p>
+            Premium option for customers looking for an
+            upgraded freezer box arrangement.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     RECOVERY
+======================================================= -->
+
+<section id="recovery-detail" class="section">
+
+  <div class="container">
+
+    <div class="feature reveal">
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">
+          06 / ROAD ASSISTANCE
+        </div>
+
+        <h2>
+          Vehicle<br>
+          Recovery
+        </h2>
+
+        <p>
+          Breakdown, accident and roadside vehicle recovery
+          enquiries. Share your current location, vehicle
+          type and destination.
+        </p>
+
+        <ul class="feature-list">
+
+          <li>
+            Breakdown recovery
+          </li>
+
+          <li>
+            Accident vehicle recovery
+          </li>
+
+          <li>
+            Roadside assistance enquiry
+          </li>
+
+          <li>
+            Local / long-distance movement
+          </li>
+
+        </ul>
+
+        <a
+          href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20Vehicle%20Recovery."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          style="margin-top:25px"
+        >
+          WHATSAPP RECOVERY
+        </a>
+
+      </div>
+
+      <div class="feature-media">
+
+        <img
+          src="https://storage.colortasarim.com/images/b416b754-fe7c-41f1-bd66-8fccb3aa7dec.png"
+          alt="Vehicle recovery tow truck"
+          loading="lazy"
+        >
+
+        <span class="feature-label">
+          VEHICLE RECOVERY
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     LONG DISTANCE
+======================================================= -->
+
+<section id="longdistance" class="section">
+
+  <div class="container">
+
+    <div class="feature reveal">
+
+      <div class="feature-media">
+
+        <img
+          src="https://images.pexels.com/videos/5266051/pexels-photo-5266051.jpeg?auto=compress&dpr=1&h=1200&w=1920"
+          alt="Long distance transport highway"
+          loading="lazy"
+        >
+
+        <span class="feature-label">
+          LONG DISTANCE TRANSPORT
+        </span>
+
+      </div>
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">
+          07 / LONG ROUTE
+        </div>
+
+        <h2>
+          Go Further.<br>
+          Safely.
+        </h2>
+
+        <p>
+          Long-distance transport requirements can be
+          discussed through WhatsApp. Share pickup,
+          destination, service type and preferred timing.
+        </p>
+
+        <ul class="feature-list">
+
+          <li>
+            Inter-district transport
+          </li>
+
+          <li>
+            Long-route enquiries
+          </li>
+
+          <li>
+            Route and distance confirmation
+          </li>
+
+          <li>
+            Service availability confirmed before booking
+          </li>
+
+        </ul>
+
+        <a
+          href="#enquiry"
+          class="btn btn-primary"
+          style="margin-top:25px"
+        >
+          PLAN TRANSPORT
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     HOW IT WORKS
+======================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-index">
+        08 / SIMPLE PROCESS
+      </div>
+
+      <h2 class="section-title">
+        CALL.<br>
+        SHARE.<br>
+        MOVE.
+      </h2>
+
+    </div>
+
+
+    <div class="process">
+
+      <article class="process-step reveal">
+
+        <div class="process-number">
+          STEP 01
+        </div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <p>
+          Call or send a WhatsApp enquiry.
+        </p>
+
+      </article>
+
+
+      <article class="process-step reveal">
+
+        <div class="process-number">
+          STEP 02
+        </div>
+
+        <h3>
+          Share Details
+        </h3>
+
+        <p>
+          Give service type, pickup, destination,
+          date/time and requirement.
+        </p>
+
+      </article>
+
+
+      <article class="process-step reveal">
+
+        <div class="process-number">
+          STEP 03
+        </div>
+
+        <h3>
+          Confirm
+        </h3>
+
+        <p>
+          Availability and required arrangements
+          are confirmed before proceeding.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     ENQUIRY
+======================================================= -->
+
+<section id="enquiry" class="section">
+
+  <div class="container">
+
+    <div class="enquiry-wrap">
+
+
+      <!-- LEFT -->
+
+      <div class="enquiry-intro reveal">
+
+        <h2>
+          NEED<br>
+          SERVICE?
+        </h2>
+
+        <p>
+          Fill the enquiry form. Your details will be
+          converted into a structured WhatsApp message.
+        </p>
+
+        <div class="contact-stack">
+
+
+          <!-- PRIMARY CALL -->
+
+          <div class="contact-row">
+
+            <div>
+              <small>
+                PRIMARY CALL
+              </small>
+
+              <strong>
+                9345658295
+              </strong>
+            </div>
+
+            <a
+              class="contact-btn"
+              href="tel:+919345658295"
+              aria-label="Call primary number"
+            >
+              ☎
+            </a>
+
+          </div>
+
+
+          <!-- PRIMARY WHATSAPP -->
+
+          <div class="contact-row">
+
+            <div>
+              <small>
+                PRIMARY WHATSAPP
+              </small>
+
+              <strong>
+                9489869164
+              </strong>
+            </div>
+
+            <a
+              class="contact-btn"
+              href="https://wa.me/919489869164"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp primary number"
+            >
+              ◉
+            </a>
+
+          </div>
+
+
+          <!-- SECONDARY -->
+
+          <div class="contact-row">
+
+            <div>
+              <small>
+                ALTERNATIVE
+              </small>
+
+              <strong>
+                8220467605
+              </strong>
+            </div>
+
+            <a
+              class="contact-btn"
+              href="tel:+918220467605"
+              aria-label="Call alternative number"
+            >
+              ☎
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <form id="enquiryForm" class="form reveal">
+
+        <div class="form-title">
+          NEW SERVICE ENQUIRY
+        </div>
+
+
+        <div class="form-grid">
+
+
+          <!-- SERVICE -->
+
+          <div class="field full">
+
+            <label for="service">
+              Select Service
+            </label>
+
+            <select id="service" required>
+
+              <option value="">
+                Select service
+              </option>
+
+              <option>
+                Ambulance
+              </option>
+
+              <option>
+                ICU Ambulance
+              </option>
+
+              <option>
+                Body Transportation
+              </option>
+
+              <option>
+                Normal Freezer Box
+              </option>
+
+              <option>
+                Premium Freezer Box
+              </option>
+
+              <option>
+                Vehicle Recovery
+              </option>
+
+              <option>
+                Long Distance Transport
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- WHATSAPP NUMBER -->
+
+          <div class="field full">
+
+            <label for="whatsapp">
+              Send Enquiry To
+            </label>
+
+            <select id="whatsapp">
+
+              <option value="919489869164">
+                WhatsApp — 9489869164 (Primary)
+              </option>
+
+              <option value="918220467605">
+                WhatsApp — 8220467605 (Alternative)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- NAME -->
+
+          <div class="field">
+
+            <label for="name">
+              Name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <!-- CONTACT -->
+
+          <div class="field">
+
+            <label for="contact">
+              Contact Number
+            </label>
+
+            <input
+              id="contact"
+              type="tel"
+              placeholder="Your phone number"
+              autocomplete="tel"
+              required
+            >
+
+          </div>
+
+
+          <!-- PICKUP -->
+
+          <div class="field">
+
+            <label for="pickup">
+              Pickup Location
+            </label>
+
+            <input
+              id="pickup"
+              type="text"
+              placeholder="Pickup location"
+              required
+            >
+
+          </div>
+
+
+          <!-- DESTINATION -->
+
+          <div class="field">
+
+            <label for="destination">
+              Destination
+            </label>
+
+            <input
+              id="destination"
+              type="text"
+              placeholder="Destination"
+            >
+
+          </div>
+
+
+          <!-- DATE TIME -->
+
+          <div class="field">
+
+            <label for="datetime">
+              Date / Time
+            </label>
+
+            <input
+              id="datetime"
+              type="datetime-local"
+            >
+
+          </div>
+
+
+          <!-- VEHICLE -->
+
+          <div class="field">
+
+            <label for="vehicle">
+              Vehicle / Requirement
+            </label>
+
+            <input
+              id="vehicle"
+              type="text"
+              placeholder="Vehicle / patient / freezer requirement"
+            >
+
+          </div>
+
+
+          <!-- DETAILS -->
+
+          <div class="field full">
+
+            <label for="details">
+              Additional Details
+            </label>
+
+            <textarea
+              id="details"
+              placeholder="Add any important details..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary form-submit"
+        >
+          SEND ENQUIRY ON WHATSAPP →
+        </button>
+
+        <div class="form-note">
+          WhatsApp will open with your enquiry pre-filled.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL CTA
+======================================================= -->
+
+<section class="final-cta">
+
+  <div class="container">
+
+    <div class="cta-box reveal">
+
+      <div class="cta-bg">
+
+        <img
+          src="https://storage.colortasarim.com/images/b416b754-fe7c-41f1-bd66-8fccb3aa7dec.png"
+          alt="Roadside recovery service"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="cta-content">
+
+        <div class="eyebrow">
+          IYARKAI SERVICE
+        </div>
+
+        <h2>
+          WHEN IT<br>
+          MATTERS.
+        </h2>
+
+        <p>
+          Call directly or send your requirement through
+          WhatsApp for availability and service confirmation.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="btn btn-primary"
+            href="tel:+919345658295"
+          >
+            CALL 9345658295
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20service."
+            target="_blank"
+            rel="noopener"
+          >
+            WHATSAPP
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 </main>
 
-<footer><div class="footer-logo">IYARKAI <span>SERVICE</span></div><div>RECOVERY & TOWING · 24/7 ENQUIRIES</div><a href="tel:+919489869164">9489869164</a></footer>
-<div class="float-actions"><a class="float-wa" href="https://wa.me/919489869164" target="_blank" rel="noopener">◉</a><a class="float-call" href="tel:+919597586099">☎</a></div>
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <div class="footer-brand">
+          IYARKAI <span>SERVICE</span>
+        </div>
+
+        <p class="footer-text">
+          Ambulance • ICU Ambulance • Body Transportation •
+          Freezer Box • Vehicle Recovery • Long Distance Transport
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#home">HOME</a>
+        <a href="#services">SERVICES</a>
+        <a href="#freezer">FREEZER</a>
+        <a href="#recovery">RECOVERY</a>
+        <a href="#enquiry">ENQUIRY</a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> IYARKAI SERVICE • ALL RIGHTS RESERVED
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =======================================================
+     FLOATING BUTTONS
+======================================================= -->
+
+<div class="floating">
+
+  <a
+    class="float-btn float-wa"
+    href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20service."
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp"
+  >
+    ◉
+  </a>
+
+  <a
+    class="float-btn float-call"
+    href="tel:+919345658295"
+    aria-label="Call"
+  >
+    ☎
+  </a>
+
+</div>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
 
 <script>
-const $=s=>document.querySelector(s);
-const form=$("#recoveryForm"),status=$("#status");
-form.addEventListener("submit",e=>{
- e.preventDefault();
- const name=$("#name").value.trim(),phone=$("#phone").value.trim(),location=$("#location").value.trim(),vehicle=$("#vehicle").value.trim(),details=$("#details").value.trim();
- if(!name||!phone||!location||!vehicle){status.textContent="Please complete Name, Contact Number, Location and Vehicle Name.";return}
- const digits=phone.replace(/\D/g,"");
- if(digits.length<10||digits.length>15){status.textContent="Please enter a valid contact number.";return}
- const msg=`🚨 IYARKAI SERVICE — RECOVERY ENQUIRY
 
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+const revealObserver =
+  new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+          revealObserver.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.10,
+      rootMargin:"0px 0px -45px 0px"
+    }
+  );
+
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+
+/* =========================================================
+   WHATSAPP ENQUIRY
+========================================================= */
+
+const form =
+  document.getElementById("enquiryForm");
+
+
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+
+  const service =
+    document.getElementById("service").value.trim();
+
+  const whatsapp =
+    document.getElementById("whatsapp").value;
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const contact =
+    document.getElementById("contact").value.trim();
+
+  const pickup =
+    document.getElementById("pickup").value.trim();
+
+  const destination =
+    document.getElementById("destination").value.trim();
+
+  const datetime =
+    document.getElementById("datetime").value;
+
+  const vehicle =
+    document.getElementById("vehicle").value.trim();
+
+  const details =
+    document.getElementById("details").value.trim();
+
+
+  if(!service || !name || !contact || !pickup){
+
+    alert(
+      "Please fill Service, Name, Contact Number and Pickup Location."
+    );
+
+    return;
+
+  }
+
+
+  let formattedDateTime = "Not specified";
+
+
+  if(datetime){
+
+    const date =
+      new Date(datetime);
+
+    if(!Number.isNaN(date.getTime())){
+
+      formattedDateTime =
+        date.toLocaleString(
+          "en-IN",
+          {
+            dateStyle:"medium",
+            timeStyle:"short"
+          }
+        );
+
+    }
+
+  }
+
+
+  const message =
+
+`IYARKAI SERVICE — NEW ENQUIRY
+
+Service: ${service}
 Name: ${name}
-Contact Number: ${phone}
-Location: ${location}
-Vehicle Name: ${vehicle}${details?`\nDetails: ${details}`:""}
+Contact: ${contact}
+Pickup Location: ${pickup}
+Destination: ${destination || "Not specified"}
+Date / Time: ${formattedDateTime}
+Vehicle / Requirement: ${vehicle || "Not specified"}
+Additional Details: ${details || "None"}
 
-I need vehicle recovery assistance.`;
- status.style.color="#16d77a";status.textContent="Opening WhatsApp…";
- window.open("https://wa.me/919489869164?text="+encodeURIComponent(msg),"_blank","noopener,noreferrer");
+Sent from IYARKAI SERVICE website.`;
+
+
+  const url =
+    "https://wa.me/" +
+    whatsapp +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    url,
+    "_blank",
+    "noopener"
+  );
+
 });
-const obs=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")}),{threshold:.12});
-document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
-const cursor=$(".cursor"),dot=$(".cursor-dot");
-window.addEventListener("mousemove",e=>{cursor.style.transform=`translate(${e.clientX-11}px,${e.clientY-11}px)`;dot.style.transform=`translate(${e.clientX-2}px,${e.clientY-2}px)`});
-document.querySelectorAll("a,button,input,textarea").forEach(el=>{
- el.addEventListener("mouseenter",()=>cursor.style.transform+=" scale(1.7)");
- el.addEventListener("mouseleave",()=>{});
+
+
+/* =========================================================
+   IMAGE PARALLAX
+   LIGHTWEIGHT — NO CONTINUOUS HEAVY ANIMATION
+========================================================= */
+
+let ticking = false;
+
+
+function updateParallax(){
+
+  const scrollY =
+    window.scrollY;
+
+  const heroImage =
+    document.querySelector(".hero-media img");
+
+
+  if(heroImage){
+
+    const offset =
+      Math.min(scrollY * .12, 70);
+
+    heroImage.style.transform =
+      `translateY(${offset}px) scale(1.02)`;
+
+  }
+
+
+  ticking = false;
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    if(!ticking){
+
+      window.requestAnimationFrame(
+        updateParallax
+      );
+
+      ticking = true;
+
+    }
+
+  },
+  {
+    passive:true
+  }
+);
+
+
+/* =========================================================
+   SMOOTH INTERNAL LINKS
+========================================================= */
+
+document.querySelectorAll(
+  'a[href^="#"]'
+).forEach((link) => {
+
+  link.addEventListener(
+    "click",
+    function(event){
+
+      const targetId =
+        this.getAttribute("href");
+
+      if(
+        !targetId ||
+        targetId === "#"
+      ){
+        return;
+      }
+
+
+      const target =
+        document.querySelector(targetId);
+
+
+      if(target){
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+      }
+
+    }
+  );
+
 });
-$("#hamb").addEventListener("click",()=>{
- let n=$(".navlinks"); n.style.display=n.style.display==="flex"?"none":"flex";
- n.style.position="absolute";n.style.top="65px";n.style.left="0";n.style.right="0";n.style.padding="20px";n.style.background="#06080a";n.style.flexDirection="column";n.style.gap="20px";n.style.borderBottom="1px solid rgba(255,255,255,.1)";
+
+
+/* =========================================================
+   IMAGE ERROR FALLBACK
+   Keeps layout attractive if external image fails
+========================================================= */
+
+document.querySelectorAll("img").forEach((img) => {
+
+  img.addEventListener(
+    "error",
+    function(){
+
+      this.style.display = "none";
+
+      const parent =
+        this.parentElement;
+
+      if(parent){
+
+        parent.style.background =
+          `
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(255,48,79,.22),
+            transparent 35%
+          ),
+          linear-gradient(
+            135deg,
+            #171b22,
+            #050608
+          )
+          `;
+
+      }
+
+    }
+  );
+
 });
-document.querySelectorAll(".navlinks a").forEach(a=>a.addEventListener("click",()=>{if(innerWidth<1000)$(".navlinks").style.display="none"}));
+
 </script>
+
 </body>
 </html>
