@@ -1,0 +1,8 @@
+{
+  "name": "IYARKAI SERVICE",
+  "description": "24/7 Ambulance, ICU Ambulance, Body Transportation, Freezer Box, Vehicle Recovery and Long Distance Transport services.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -4,1364 +4,3049 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 
 <title>IYARKAI SERVICE — Ambulance • ICU • Body Transport • Freezer • Recovery</title>
 
 <meta name="description"
       content="IYARKAI SERVICE — 24/7 Ambulance, ICU Ambulance, Body Transportation, Freezer Box, Vehicle Recovery and Long Distance Transport services.">
 
+<meta property="og:title" content="IYARKAI SERVICE — Ambulance • ICU • Body Transport • Freezer • Recovery">
+<meta property="og:description" content="IYARKAI SERVICE — 24/7 Ambulance, ICU Ambulance, Body Transportation, Freezer Box, Vehicle Recovery and Long Distance Transport services.">
+
 <meta name="theme-color" content="#050608">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Leaflet.js Interactive Mapping -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <style>
 /* =========================================================
-   IYARKAI SERVICE
-   CINEMATIC SINGLE-FILE WEBSITE
+   IYARKAI SERVICE — 2026 CINEMATIC EMERGENCY DESIGN SYSTEM
+   Precision Architecture • Emergency Ruby • Obsidian Depth
 ========================================================= */
 
-:root{
-  --bg:#050608;
-  --bg2:#090b0f;
-  --panel:#0c0f14;
-  --panel2:#10141b;
-  --line:rgba(255,255,255,.10);
-  --text:#f5f7fa;
-  --muted:#9da5b1;
-  --white:#fff;
+:root {
+  /* Surface Palette: Deep Obsidian & Tactical Charcoal */
+  --bg: #030407;
+  --bg-deep: #010204;
+  --panel: #07090e;
+  --panel-elevated: #0c0f16;
+  --panel-highlight: #121620;
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --panel-border-hover: rgba(255, 255, 255, 0.22);
+  --line: rgba(255, 255, 255, 0.07);
 
-  --red:#ff304f;
-  --red2:#ff526a;
+  /* Typographic Contrast */
+  --text: #f5f7fa;
+  --text-muted: #94a0b2;
+  --text-dim: #606d80;
+  --white: #ffffff;
 
-  --blue:#39a8ff;
-  --cyan:#35d8ff;
+  /* Emergency Accent Signals */
+  --red: #ff223e;
+  --red-hover: #ff3b54;
+  --red-glow: rgba(255, 34, 62, 0.40);
+  --red-subtle: rgba(255, 34, 62, 0.12);
+  --red-border: rgba(255, 34, 62, 0.45);
 
-  --green:#27d98b;
-  --amber:#ffad33;
+  /* Operational Status Accents */
+  --blue: #2f9eff;
+  --cyan: #38bdf8;
+  --green: #10b981;
+  --green-glow: rgba(16, 185, 129, 0.35);
+  --amber: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.35);
 
-  --shadow:0 25px 80px rgba(0,0,0,.55);
+  /* Architectural Radii & Spacing */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --max-width: 1240px;
 
-  --radius:24px;
-  --max:1220px;
+  /* Cinematic Motion Curves */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* RESET */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-  scroll-behavior:smooth;
-  background:var(--bg);
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color-scheme: dark;
 }
 
-body{
-  background:
-    radial-gradient(circle at 50% -10%,rgba(255,48,79,.10),transparent 35%),
-    var(--bg);
-  color:var(--text);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  overflow-x:hidden;
-  line-height:1.6;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9998;
-  opacity:.045;
+body {
+  background-color: var(--bg);
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent 2px,
-      #fff 3px
-    );
-  mix-blend-mode:overlay;
+    radial-gradient(ellipse 90% 60% at 50% -12%, rgba(255, 34, 62, 0.14), transparent 60%),
+    radial-gradient(circle at 100% 30%, rgba(56, 189, 248, 0.04), transparent 45%),
+    radial-gradient(circle at 0% 70%, rgba(255, 34, 62, 0.06), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(16, 185, 129, 0.03), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
+/* Subtle Film Scanline & Grain Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.022;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 2px,
+    #ffffff 3px
+  );
+  mix-blend-mode: overlay;
 }
 
-button,
-input,
-select,
-textarea{
-  font:inherit;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-img{
-  display:block;
-  max-width:100%;
+button, input, select, textarea {
+  font: inherit;
 }
 
-.container{
-  width:min(var(--max),calc(100% - 32px));
-  margin:auto;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.topbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-
-  border-bottom:1px solid rgba(255,255,255,.08);
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5,6,8,.96),
-      rgba(5,6,8,.72)
-    );
-
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
 }
 
-.nav{
-  min-height:74px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:0;
-}
-
-.brand-mark{
-  width:40px;
-  height:40px;
-  border:1px solid rgba(255,48,79,.65);
-  border-radius:12px;
-  display:grid;
-  place-items:center;
-  background:
-    radial-gradient(circle,#ff304f 0 8%,transparent 9%),
-    rgba(255,48,79,.08);
-  box-shadow:
-    0 0 30px rgba(255,48,79,.16),
-    inset 0 0 20px rgba(255,48,79,.08);
-  flex-shrink:0;
-}
-
-.brand-mark span{
-  width:15px;
-  height:2px;
-  background:#fff;
-  box-shadow:
-    0 -5px 0 rgba(255,255,255,.8),
-    0 5px 0 rgba(255,255,255,.8);
-}
-
-.brand-text strong{
-  display:block;
-  font-size:13px;
-  letter-spacing:.16em;
-  line-height:1.1;
-}
-
-.brand-text small{
-  color:#737c88;
-  font-size:8px;
-  letter-spacing:.20em;
-}
-
-.nav-links{
-  display:none;
-  align-items:center;
-  gap:20px;
-}
-
-.nav-links a{
-  font-size:10px;
-  letter-spacing:.12em;
-  color:#9ca5b1;
-  transition:.25s ease;
-}
-
-.nav-links a:hover{
-  color:#fff;
-}
-
-.nav-call{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  border:1px solid rgba(255,48,79,.40);
-  padding:10px 13px;
-  border-radius:999px;
-  background:rgba(255,48,79,.08);
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
-}
-
-.nav-call-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#ff304f;
-  box-shadow:0 0 12px #ff304f;
-  animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-  0%,100%{opacity:1;transform:scale(1)}
-  50%{opacity:.45;transform:scale(.75)}
+.container {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 0 auto;
 }
 
 /* =========================================================
-   HERO
+   SCROLL PROGRESS BAR
 ========================================================= */
 
-.hero{
-  min-height:100svh;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
-  isolation:isolate;
-}
-
-.hero-media{
-  position:absolute;
-  inset:0;
-  z-index:-3;
-}
-
-.hero-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  filter:
-    saturate(.92)
-    contrast(1.08)
-    brightness(.57);
-  transform:scale(1.08);
-  animation:heroZoom 15s ease-out forwards;
-}
-
-@keyframes heroZoom{
-  from{transform:scale(1.12)}
-  to{transform:scale(1)}
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(2,3,5,.50) 0%,
-      rgba(2,3,5,.08) 35%,
-      rgba(2,3,5,.58) 62%,
-      rgba(2,3,5,1) 100%
-    );
-}
-
-.hero-glow{
-  position:absolute;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  right:-240px;
-  top:18%;
-  background:rgba(255,48,79,.13);
-  filter:blur(100px);
-  pointer-events:none;
-}
-
-.hero-content{
-  width:100%;
-  padding:
-    140px 0
-    max(55px,env(safe-area-inset-bottom));
-}
-
-.hero-kicker{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:22px;
-  color:#cbd1d9;
-  font-size:10px;
-  letter-spacing:.28em;
-  font-weight:800;
-  text-transform:uppercase;
-}
-
-.hero-kicker::before{
-  content:"";
-  width:30px;
-  height:1px;
-  background:var(--red);
-  box-shadow:0 0 14px var(--red);
-}
-
-.hero h1{
-  max-width:850px;
-  font-size:clamp(48px,12vw,105px);
-  line-height:.88;
-  letter-spacing:-.055em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-
-.hero h1 span{
-  display:block;
-}
-
-.hero h1 .accent{
-  color:#fff;
-  text-shadow:
-    0 0 40px rgba(255,48,79,.25);
-}
-
-.hero-sub{
-  margin-top:26px;
-  max-width:580px;
-  color:#c2c8d0;
-  font-size:clamp(13px,2vw,18px);
-  letter-spacing:.10em;
-  font-weight:700;
-}
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:30px;
-}
-
-.btn{
-  min-height:50px;
-  padding:0 20px;
-  border-radius:999px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  transition:.25s ease;
-  border:1px solid transparent;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btn-primary{
-  color:#fff;
-  background:var(--red);
-  box-shadow:
-    0 12px 35px rgba(255,48,79,.24);
-}
-
-.btn-secondary{
-  color:#fff;
-  border-color:rgba(255,255,255,.16);
-  background:rgba(255,255,255,.06);
-  backdrop-filter:blur(12px);
-}
-
-.hero-status{
-  margin-top:42px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:#89929e;
-  font-size:10px;
-  letter-spacing:.12em;
-}
-
-.status-light{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#28dc89;
-  box-shadow:0 0 15px #28dc89;
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #ff223e 0%, #ff6b81 50%, #ff223e 100%);
+  box-shadow: 0 0 14px rgba(255, 34, 62, 0.9);
+  z-index: 1002;
+  transition: width 0.08s linear;
 }
 
 /* =========================================================
-   TICKER
+   TOP BAR / NAVIGATION
 ========================================================= */
 
-.ticker{
-  border-top:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  overflow:hidden;
-  background:#080a0d;
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(3, 4, 7, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-.ticker-track{
-  width:max-content;
-  display:flex;
-  gap:50px;
-  padding:15px 0;
-  animation:ticker 28s linear infinite;
+.topbar.scrolled {
+  background: rgba(2, 3, 5, 0.95);
+  border-bottom-color: rgba(255, 34, 62, 0.22);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
 }
 
-.ticker-item{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  color:#7d8691;
-  font-size:9px;
-  letter-spacing:.22em;
-  font-weight:900;
-  white-space:nowrap;
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-.ticker-item i{
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:var(--red);
-  box-shadow:0 0 10px var(--red);
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
 }
 
-@keyframes ticker{
-  to{transform:translateX(-50%)}
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 34, 62, 0.7);
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 50%, #ff223e 0%, rgba(255, 34, 62, 0.25) 50%, transparent 80%), rgba(255, 34, 62, 0.12);
+  box-shadow: 0 0 25px rgba(255, 34, 62, 0.3), inset 0 0 15px rgba(255, 34, 62, 0.2);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-cinematic), box-shadow 0.3s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: scale(1.04);
+  box-shadow: 0 0 35px rgba(255, 34, 62, 0.5), inset 0 0 20px rgba(255, 34, 62, 0.3);
+}
+
+.brand-mark span {
+  position: relative;
+  width: 18px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 2px;
+  display: block;
+}
+
+.brand-mark span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.brand-text strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.brand-text small {
+  display: block;
+  color: #8490a2;
+  font-size: 8.5px;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #9aa5b6;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+  transition: width 0.3s var(--ease-cinematic);
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(255, 34, 62, 0.55);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 34, 62, 0.16), rgba(255, 34, 62, 0.08));
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  white-space: nowrap;
+  box-shadow: 0 0 25px rgba(255, 34, 62, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-call:hover {
+  background: var(--red);
+  border-color: var(--red);
+  box-shadow: 0 0 35px rgba(255, 34, 62, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav-call-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff223e;
+  box-shadow: 0 0 10px #ff223e;
+  animation: pulseBeacon 1.6s infinite ease-in-out;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+/* Hamburger Menu Button */
+.nav-hamburger {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-hamburger:hover {
+  background: rgba(255, 34, 62, 0.14);
+  border-color: rgba(255, 34, 62, 0.45);
+  transform: translateY(-1px);
+}
+
+.nav-hamburger .hamburger-bar {
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* =========================================================
-   SECTION
+   RESPONSIVE HAMBURGER SIDEBAR DRAWER
 ========================================================= */
 
-section{
-  position:relative;
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 2, 4, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
-.section{
-  padding:100px 0;
+.sidebar-backdrop.open {
+  opacity: 1;
+  visibility: visible;
 }
 
-.section-head{
-  margin-bottom:38px;
+.sidebar-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 86vw);
+  background: #06080e;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 1060;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-cinematic);
+  box-shadow: -25px 0 70px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  overflow-y: auto;
 }
 
-.section-index{
-  color:var(--red);
-  font-size:10px;
-  letter-spacing:.24em;
-  font-weight:900;
-  margin-bottom:12px;
+.sidebar-drawer.open {
+  transform: translateX(0);
 }
 
-.section-title{
-  font-size:clamp(34px,7vw,66px);
-  line-height:.96;
-  letter-spacing:-.045em;
-  text-transform:uppercase;
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
 }
 
-.section-desc{
-  margin-top:16px;
-  max-width:650px;
-  color:var(--muted);
-  font-size:14px;
+.sidebar-close {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-close:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: rotate(90deg);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  color: #b7c0cc;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: rgba(255, 34, 62, 0.10);
+  border-color: rgba(255, 34, 62, 0.35);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.sidebar-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* =========================================================
-   SERVICE GRID
+   HERO SECTION — 2026 CINEMATIC FOCAL POINT
 ========================================================= */
 
-.services-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
+.hero {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  padding-top: 100px;
 }
 
-.service-card{
-  min-height:380px;
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:var(--radius);
-  background:#0b0d11;
-  isolation:isolate;
-  box-shadow:var(--shadow);
-  transition:
-    transform .45s cubic-bezier(.2,.7,.2,1),
-    border-color .35s ease;
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
 }
 
-.service-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(255,255,255,.22);
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+  filter: saturate(0.95) contrast(1.15) brightness(0.52);
+  transform: scale(1.08);
+  will-change: transform;
 }
 
-.service-image{
-  position:absolute;
-  inset:0;
-  z-index:-3;
+/* Multi-layered smooth cinematic vignette */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: 
+    radial-gradient(circle at 60% 40%, rgba(3, 4, 7, 0.2) 0%, rgba(3, 4, 7, 0.8) 75%, rgba(3, 4, 7, 1) 100%),
+    linear-gradient(180deg, rgba(3, 4, 7, 0.75) 0%, rgba(3, 4, 7, 0.15) 25%, rgba(3, 4, 7, 0.75) 75%, rgba(3, 4, 7, 1) 100%);
 }
 
-.service-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:
-    transform 1s cubic-bezier(.2,.7,.2,1),
-    filter .5s ease;
-  filter:
-    brightness(.54)
-    saturate(.85)
-    contrast(1.08);
+.hero-glow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  right: -180px;
+  top: 10%;
+  background: radial-gradient(circle, rgba(255, 34, 62, 0.24) 0%, transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -1;
+  animation: beaconAura 6s ease-in-out infinite alternate;
 }
 
-.service-card:hover .service-image img{
-  transform:scale(1.07);
-  filter:
-    brightness(.66)
-    saturate(1)
-    contrast(1.08);
+@keyframes beaconAura {
+  0% { transform: scale(0.95) translate(0, 0); opacity: 0.8; }
+  100% { transform: scale(1.08) translate(-20px, 15px); opacity: 1; }
 }
 
-.service-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.05),
-      rgba(0,0,0,.18) 35%,
-      rgba(0,0,0,.92) 100%
-    );
+.hero-content {
+  width: 100%;
+  padding-bottom: max(64px, env(safe-area-inset-bottom));
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
 }
 
-.service-card::after{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  right:-80px;
-  top:-80px;
-  border-radius:50%;
-  background:var(--card-glow,rgba(255,48,79,.18));
-  filter:blur(50px);
-  z-index:-1;
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: #e2e8f0;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 18px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.service-content{
-  height:100%;
-  min-height:380px;
-  padding:25px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+.hero-kicker::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 14px var(--red);
+  animation: pulseBeacon 1.8s infinite;
 }
 
-.service-number{
-  position:absolute;
-  top:22px;
-  left:24px;
-  font-size:10px;
-  letter-spacing:.18em;
-  color:rgba(255,255,255,.55);
-  font-weight:900;
+.hero h1 {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  max-width: 980px;
+  font-size: clamp(48px, 9.8vw, 112px);
+  line-height: 0.90;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
 }
 
-.service-tag{
-  align-self:flex-start;
-  margin-bottom:auto;
-  margin-top:2px;
-  padding:6px 9px;
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:999px;
-  background:rgba(0,0,0,.22);
-  backdrop-filter:blur(10px);
-  font-size:8px;
-  letter-spacing:.16em;
-  font-weight:900;
+.hero h1 span {
+  display: block;
 }
 
-.service-content h3{
-  font-size:clamp(26px,6vw,42px);
-  line-height:.94;
-  letter-spacing:-.04em;
-  text-transform:uppercase;
+.hero h1 .accent {
+  color: #ffffff;
+  text-shadow: 0 0 50px rgba(255, 34, 62, 0.5);
+  background: linear-gradient(180deg, #ffffff 40%, #ff7a8d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.service-content p{
-  margin-top:10px;
-  color:#b7bec8;
-  font-size:12px;
-  max-width:470px;
+.hero-sub {
+  margin-top: 26px;
+  max-width: 640px;
+  color: #c9d2de;
+  font-size: clamp(14px, 2.2vw, 18px);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.service-link{
-  margin-top:18px;
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  color:#fff;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.service-link span{
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,255,255,.20);
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
 }
 
 /* =========================================================
-   FEATURE SPLIT
+   BUTTON DESIGN SYSTEM
 ========================================================= */
 
-.feature{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:18px;
-  align-items:stretch;
+.btn {
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: transform 0.25s var(--ease-cinematic), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-media{
-  min-height:420px;
-  border-radius:var(--radius);
-  overflow:hidden;
-  position:relative;
-  border:1px solid rgba(255,255,255,.10);
-  background:#0c0f14;
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-.feature-media img{
-  width:100%;
-  height:100%;
-  min-height:420px;
-  object-fit:cover;
-  filter:
-    brightness(.65)
-    saturate(.82)
-    contrast(1.05);
-  transition:transform 1s ease;
+.btn:active {
+  transform: translateY(0);
 }
 
-.feature:hover .feature-media img{
-  transform:scale(1.04);
+.btn-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff2a44, #e61934);
+  box-shadow: 
+    0 10px 30px rgba(255, 34, 62, 0.40),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-.feature-media::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      180deg,
-      transparent 40%,
-      rgba(0,0,0,.7)
-    );
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff3b54, #ff223e);
+  box-shadow: 
+    0 16px 45px rgba(255, 34, 62, 0.60),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.feature-label{
-  position:absolute;
-  z-index:2;
-  left:22px;
-  bottom:22px;
-  font-size:9px;
-  letter-spacing:.18em;
-  font-weight:900;
-  color:#fff;
+.btn-secondary {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.feature-copy{
-  padding:28px;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.10);
-  background:
-    radial-gradient(
-      circle at 90% 0,
-      rgba(255,48,79,.10),
-      transparent 35%
-    ),
-    #0b0e13;
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.feature-copy .eyebrow{
-  color:var(--red);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.20em;
-  text-transform:uppercase;
+.hero-status {
+  margin-top: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #9aa5b6;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  background: rgba(4, 6, 10, 0.65);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
 }
 
-.feature-copy h2{
-  margin-top:14px;
-  font-size:clamp(32px,7vw,62px);
-  line-height:.94;
-  letter-spacing:-.045em;
-  text-transform:uppercase;
-}
-
-.feature-copy p{
-  margin-top:18px;
-  color:#aeb6c0;
-  font-size:14px;
-}
-
-.feature-list{
-  list-style:none;
-  margin-top:25px;
-  display:grid;
-  gap:12px;
-}
-
-.feature-list li{
-  display:flex;
-  gap:11px;
-  color:#d9dee5;
-  font-size:12px;
-}
-
-.feature-list li::before{
-  content:"";
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--red);
-  box-shadow:0 0 12px rgba(255,48,79,.8);
-  margin-top:7px;
-  flex-shrink:0;
+.status-light {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 12px #10b981;
+  animation: pulseBeacon 2s infinite ease-in-out;
 }
 
 /* =========================================================
-   FREEZER
+   TICKER MARQUEE
 ========================================================= */
 
-.freezer-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
+.ticker {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  background: #040508;
+  position: relative;
 }
 
-.freezer-card{
-  min-height:460px;
-  position:relative;
-  overflow:hidden;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.11);
-  background:#0a0d11;
+.ticker::before, .ticker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.freezer-card img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:
-    brightness(.55)
-    contrast(1.05);
-  transition:transform 1s ease;
+.ticker::before {
+  left: 0;
+  background: linear-gradient(90deg, #040508, transparent);
 }
 
-.freezer-card:hover img{
-  transform:scale(1.05);
+.ticker::after {
+  right: 0;
+  background: linear-gradient(-90deg, #040508, transparent);
 }
 
-.freezer-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.02),
-      rgba(0,0,0,.88) 100%
-    );
+.ticker-track {
+  width: max-content;
+  display: flex;
+  gap: 60px;
+  padding: 16px 0;
+  animation: ticker 32s linear infinite;
+  will-change: transform;
 }
 
-.freezer-content{
-  position:absolute;
-  z-index:2;
-  left:25px;
-  right:25px;
-  bottom:25px;
+.ticker-track:hover {
+  animation-play-state: paused;
 }
 
-.freezer-badge{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.20);
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(10px);
-  font-size:8px;
-  font-weight:900;
-  letter-spacing:.16em;
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #8c97a8;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
-.freezer-card.premium .freezer-badge{
-  border-color:rgba(255,190,70,.45);
-  color:#ffd98b;
+.ticker-item i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+  display: inline-block;
 }
 
-.freezer-content h3{
-  margin-top:12px;
-  font-size:36px;
-  line-height:.95;
-  text-transform:uppercase;
-}
-
-.freezer-content p{
-  margin-top:10px;
-  color:#b9c0c8;
-  font-size:12px;
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* =========================================================
-   PROCESS
+   SECTION BASE & TYPOGRAPHY
 ========================================================= */
 
-.process{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
+section {
+  position: relative;
+  scroll-margin-top: 86px;
 }
 
-.process-step{
-  padding:24px;
-  min-height:180px;
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:20px;
-  background:#0b0e13;
-  position:relative;
-  overflow:hidden;
+.section {
+  padding: 110px 0;
 }
 
-.process-step::after{
-  content:"";
-  position:absolute;
-  right:-40px;
-  bottom:-70px;
-  width:170px;
-  height:170px;
-  border-radius:50%;
-  background:rgba(255,48,79,.08);
-  filter:blur(35px);
+.section-head {
+  margin-bottom: 52px;
 }
 
-.process-number{
-  color:var(--red);
-  font-size:10px;
-  letter-spacing:.2em;
-  font-weight:900;
+.section-index {
+  color: var(--red);
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  font-weight: 900;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.process-step h3{
-  margin-top:25px;
-  font-size:21px;
-  text-transform:uppercase;
+.section-index::after {
+  content: "";
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  background: rgba(255, 34, 62, 0.45);
 }
 
-.process-step p{
-  margin-top:7px;
-  color:#929ba7;
-  font-size:12px;
+.section-title {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(34px, 6.5vw, 70px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.section-desc {
+  margin-top: 20px;
+  max-width: 680px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 /* =========================================================
-   ENQUIRY
+   SERVICES GRID (01 / SERVICES) — EDITORIAL LAYOUT
 ========================================================= */
 
-.enquiry-wrap{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:18px;
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-.enquiry-intro{
-  padding:28px;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.09);
-  background:
-    radial-gradient(
-      circle at 20% 10%,
-      rgba(255,48,79,.13),
-      transparent 38%
-    ),
-    #0b0e13;
+.service-card {
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  background: #06080e;
+  isolation: isolate;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+  transition: transform 0.45s var(--ease-cinematic), border-color 0.35s ease, box-shadow 0.45s ease;
 }
 
-.enquiry-intro h2{
-  font-size:clamp(36px,8vw,70px);
-  line-height:.92;
-  letter-spacing:-.05em;
-  text-transform:uppercase;
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 32px 75px rgba(0, 0, 0, 0.85), 0 0 40px var(--card-glow, rgba(255, 34, 62, 0.2));
 }
 
-.enquiry-intro p{
-  margin-top:18px;
-  color:#9fa8b3;
-  font-size:13px;
+.service-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
 }
 
-.contact-stack{
-  margin-top:28px;
-  display:grid;
-  gap:10px;
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-cinematic), filter 0.6s ease;
+  filter: brightness(0.50) saturate(0.92) contrast(1.12);
+  will-change: transform;
 }
 
-.contact-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:15px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.025);
+.service-card:hover .service-image img {
+  transform: scale(1.08);
+  filter: brightness(0.65) saturate(1.05) contrast(1.15);
 }
 
-.contact-row small{
-  display:block;
-  color:#727b87;
-  font-size:8px;
-  letter-spacing:.16em;
-  font-weight:900;
-  text-transform:uppercase;
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 4, 7, 0.2) 0%,
+    rgba(3, 4, 7, 0.45) 40%,
+    rgba(3, 4, 7, 0.94) 85%,
+    rgba(3, 4, 7, 1) 100%
+  );
 }
 
-.contact-row strong{
-  display:block;
-  margin-top:2px;
-  font-size:15px;
+.service-card::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -90px;
+  top: -90px;
+  border-radius: 50%;
+  background: var(--card-glow, rgba(255, 34, 62, 0.18));
+  filter: blur(65px);
+  z-index: -1;
+  pointer-events: none;
 }
 
-.contact-btn{
-  width:40px;
-  height:40px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:var(--red);
-  font-size:15px;
-  flex-shrink:0;
+.service-content {
+  height: 100%;
+  min-height: 420px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2;
 }
 
-.form{
-  padding:25px;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:var(--radius);
-  background:#0a0d11;
+.service-number {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 800;
 }
 
-.form-title{
-  font-size:12px;
-  letter-spacing:.16em;
-  font-weight:900;
-  text-transform:uppercase;
-  margin-bottom:20px;
+.service-tag {
+  align-self: flex-start;
+  margin-bottom: auto;
+  margin-top: 4px;
+  margin-left: 36px;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xs);
+  background: rgba(3, 4, 8, 0.55);
+  backdrop-filter: blur(10px);
+  font-size: 8.5px;
+  letter-spacing: 0.20em;
+  font-weight: 800;
+  color: #dce3ee;
+  text-transform: uppercase;
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
+.service-content h3 {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(28px, 4.5vw, 42px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 800;
 }
 
-.field{
-  display:grid;
-  gap:7px;
+.service-content p {
+  margin-top: 12px;
+  color: #b3bcc7;
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 480px;
 }
 
-.field label{
-  color:#7e8793;
-  font-size:8px;
-  letter-spacing:.16em;
-  font-weight:900;
-  text-transform:uppercase;
+.service-link {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.service-link span {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-xs);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover .service-link {
+  color: #ff526a;
+}
+
+.service-card:hover .service-link span {
+  transform: translateX(4px);
+  background: var(--red);
+  border-color: var(--red);
+  color: #ffffff;
+}
+
+/* =========================================================
+   FEATURE SPLIT (DETAIL SECTIONS)
+========================================================= */
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.feature-media {
+  min-height: 450px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--panel-border);
+  background: #080a10;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.75);
+}
+
+.feature-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(0.92) contrast(1.10);
+  transition: transform 0.8s var(--ease-cinematic), filter 0.6s ease;
+  will-change: transform;
+}
+
+.feature:hover .feature-media img {
+  transform: scale(1.05);
+  filter: brightness(0.72) saturate(1.0);
+}
+
+.feature-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 3, 5, 0.15) 0%,
+    rgba(2, 3, 5, 0.75) 100%
+  );
+}
+
+.feature-label {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  bottom: 24px;
+  font-size: 9.5px;
+  letter-spacing: 0.20em;
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(3, 4, 7, 0.80);
+  padding: 7px 16px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  text-transform: uppercase;
+}
+
+.feature-copy {
+  padding: 44px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--panel-border);
+  background: radial-gradient(
+    circle at 90% 0,
+    rgba(255, 34, 62, 0.08),
+    transparent 50%
+  ), #07090f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.feature-copy .eyebrow {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-copy .eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 34, 62, 0.40);
+}
+
+.feature-copy h2 {
+  margin-top: 16px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(34px, 5.5vw, 62px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.feature-copy p {
+  margin-top: 18px;
+  color: #aeb8c5;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.feature-list {
+  list-style: none;
+  margin-top: 28px;
+  display: grid;
+  gap: 12px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dce2ea;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.feature-list li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 10px rgba(255, 34, 62, 0.9);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   FREEZER GRID
+========================================================= */
+
+.freezer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.freezer-card {
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--panel-border);
+  background: #06080e;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+  transition: transform 0.45s var(--ease-cinematic), border-color 0.35s ease, box-shadow 0.45s ease;
+}
+
+.freezer-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.85);
+}
+
+.freezer-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55) contrast(1.10);
+  transition: transform 0.8s var(--ease-cinematic);
+  will-change: transform;
+}
+
+.freezer-card:hover img {
+  transform: scale(1.06);
+}
+
+.freezer-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 3, 5, 0.15) 0%,
+    rgba(2, 3, 5, 0.45) 45%,
+    rgba(2, 3, 5, 0.95) 100%
+  );
+}
+
+.freezer-content {
+  position: absolute;
+  z-index: 2;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+}
+
+.freezer-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(2, 3, 6, 0.60);
+  backdrop-filter: blur(10px);
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.20em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.freezer-card.premium .freezer-badge {
+  border-color: rgba(255, 190, 70, 0.45);
+  color: #ffd98b;
+  background: rgba(255, 190, 70, 0.12);
+}
+
+.freezer-content h3 {
+  margin-top: 14px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(30px, 4.5vw, 42px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.freezer-content p {
+  margin-top: 12px;
+  color: #b7c0cc;
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 440px;
+}
+
+/* =========================================================
+   PROCESS STEPS
+========================================================= */
+
+.process {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.process-step {
+  padding: 36px 32px;
+  min-height: 210px;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  background: #07090f;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 34, 62, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.process-step::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  bottom: -70px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 34, 62, 0.08);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.process-number {
+  color: var(--red);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  font-weight: 900;
+}
+
+.process-step h3 {
+  margin-top: 24px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.process-step p {
+  margin-top: 8px;
+  color: #98a2af;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ENQUIRY & CONTACT SECTION — DISPATCH CONSOLE
+========================================================= */
+
+.enquiry-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.enquiry-intro {
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--panel-border);
+  background: radial-gradient(
+    circle at 20% 10%,
+    rgba(255, 34, 62, 0.12),
+    transparent 55%
+  ), #07090f;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+
+.intro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--red);
+  background: rgba(255, 34, 62, 0.10);
+  border: 1px solid rgba(255, 34, 62, 0.30);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.intro-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.enquiry-intro h2 {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(38px, 5.5vw, 64px);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.enquiry-intro p {
+  margin-top: 18px;
+  color: #a4adba;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.contact-stack {
+  margin-top: 32px;
+  display: grid;
+  gap: 12px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.contact-row:hover {
+  border-color: rgba(255, 34, 62, 0.4);
+  background: rgba(255, 34, 62, 0.06);
+  transform: translateX(4px);
+}
+
+.contact-row small {
+  display: block;
+  color: #7a8492;
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-row strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contact-btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--red);
+  color: #ffffff;
+  font-size: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 18px rgba(255, 34, 62, 0.45);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+  transform: scale(1.08);
+  background: var(--red-hover);
+  box-shadow: 0 6px 22px rgba(255, 34, 62, 0.65);
+}
+
+/* =========================================================
+   FORM CONTAINER & DISPATCH CONSOLE HIERARCHY
+========================================================= */
+
+.form {
+  padding: 38px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-lg);
+  background: #070911;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+  position: relative;
+}
+
+.form-header {
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13.5px;
+  letter-spacing: 0.20em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-title::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--red);
+}
+
+.form-subtitle {
+  margin-top: 6px;
+  color: #7d8796;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* Status Alert Message */
+.form-status-msg {
+  display: none;
+  padding: 12px 16px;
+  border-radius: var(--radius-xs);
+  font-size: 12.5px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.form-status-msg.error {
+  display: block;
+  background: rgba(255, 34, 62, 0.14);
+  border: 1px solid rgba(255, 34, 62, 0.50);
+  color: #ff99a8;
+}
+
+.form-status-msg.success {
+  display: block;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.50);
+  color: #6ee7b7;
+}
+
+/* Logical Form Group Block */
+.form-group-block {
+  margin-bottom: 20px;
+}
+
+.form-group-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 14px;
+}
+
+.form-group-header .group-num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  background: rgba(255, 34, 62, 0.10);
+  border: 1px solid rgba(255, 34, 62, 0.25);
+  padding: 2px 7px;
+  border-radius: 4px;
+  line-height: 1.3;
+}
+
+.form-group-header .group-title {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c4ccd8;
+}
+
+/* Responsive Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  color: #8b95a4;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .field input,
 .field select,
-.field textarea{
-  width:100%;
-  border:1px solid rgba(255,255,255,.10);
-  outline:none;
-  color:#f5f7fa;
-  background:#11151b;
-  border-radius:13px;
-  padding:13px 14px;
-  font-size:13px;
-  transition:.25s ease;
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  outline: none;
+  color: #f4f6fa;
+  background: #0b0e16;
+  border-radius: 8px;
+  padding: 0 15px;
+  height: 46px;
+  font-size: 13.5px;
+  font-family: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .field input:focus,
 .field select:focus,
-.field textarea:focus{
-  border-color:rgba(255,48,79,.60);
-  box-shadow:0 0 0 3px rgba(255,48,79,.08);
+.field textarea:focus {
+  border-color: rgba(255, 34, 62, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 34, 62, 0.14);
+  background: #0e121c;
 }
 
-.field textarea{
-  min-height:120px;
-  resize:vertical;
+.field select {
+  cursor: pointer;
+  appearance: auto;
 }
 
-.field select option{
-  background:#101319;
+.field select option {
+  background: #0b0e16;
+  color: #f4f6fa;
 }
 
-.form-submit{
-  margin-top:15px;
-  width:100%;
-  border:0;
-  cursor:pointer;
-}
-
-.form-note{
-  margin-top:10px;
-  text-align:center;
-  color:#68717d;
-  font-size:9px;
+.field textarea {
+  height: auto;
+  min-height: 90px;
+  padding: 12px 15px;
+  resize: vertical;
+  line-height: 1.5;
 }
 
 /* =========================================================
-   CTA
+   LOCATION PICKER & INTERACTIVE MAP CONTROLS
 ========================================================= */
 
-.final-cta{
-  padding:100px 0 120px;
+.location-field {
+  grid-column: 1 / -1;
 }
 
-.cta-box{
-  min-height:430px;
-  border-radius:30px;
-  overflow:hidden;
-  position:relative;
-  border:1px solid rgba(255,255,255,.11);
-  display:flex;
-  align-items:flex-end;
-  background:#0b0e13;
+.field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 2px;
 }
 
-.cta-box::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      100deg,
-      rgba(255,48,79,.22),
-      transparent 48%
-    );
-  z-index:1;
+.map-launch-btn {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, color 0.2s ease;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
-.cta-box::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.05),
-      rgba(0,0,0,.92)
-    );
-  z-index:1;
+.map-launch-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: rgba(56, 189, 248, 0.7);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-.cta-bg{
-  position:absolute;
-  inset:0;
+.location-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
 }
 
-.cta-bg img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:
-    brightness(.45)
-    saturate(.8);
+.location-input-wrap input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
 }
 
-.cta-content{
-  position:relative;
-  z-index:2;
-  padding:32px;
+.location-confirm-btn {
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 34, 62, 0.45);
+  background: rgba(255, 34, 62, 0.12);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
-.cta-content .eyebrow{
-  color:#ff6279;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.20em;
+.location-confirm-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  box-shadow: 0 0 18px rgba(255, 34, 62, 0.45);
+  transform: translateY(-1px);
 }
 
-.cta-content h2{
-  margin-top:13px;
-  font-size:clamp(42px,9vw,86px);
-  line-height:.88;
-  letter-spacing:-.055em;
-  text-transform:uppercase;
+.location-confirm-btn.confirmed {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #6ee7b7;
+  box-shadow: none;
 }
 
-.cta-content p{
-  max-width:520px;
-  margin-top:17px;
-  color:#c0c7d0;
-  font-size:13px;
+.location-status-bar {
+  min-height: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.location-status-bar .status-confirmed {
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  padding: 8px 12px;
+  border-radius: 6px;
+  word-break: break-word;
+}
+
+.location-status-bar .status-confirmed a {
+  color: #60a5fa;
+  text-decoration: underline;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.location-status-bar .status-unconfirmed {
+  color: #fbbf24;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+}
+
+.route-preview-badge {
+  background: linear-gradient(135deg, rgba(47, 158, 255, 0.12), rgba(47, 158, 255, 0.04));
+  border: 1px solid rgba(47, 158, 255, 0.3);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  color: #bae6fd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.route-preview-badge strong {
+  color: #ffffff;
+}
+
+.route-preview-badge a {
+  color: #38bdf8;
+  text-decoration: underline;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =========================================================
+   FORM ACTIONS & SUBMISSION CTA
+========================================================= */
+
+.form-actions-wrap {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.form-submit {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  height: 52px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff2a44, #d9142e);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(255, 34, 62, 0.40);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-submit:hover {
+  background: linear-gradient(135deg, #ff3f57, #eb1d36);
+  box-shadow: 0 12px 32px rgba(255, 34, 62, 0.60);
+  transform: translateY(-2px);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+.form-note {
+  margin-top: 12px;
+  text-align: center;
+  color: #7a8492;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .location-input-wrap {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .location-confirm-btn {
+    width: 100%;
+    height: 44px;
+  }
+
+  .field-label-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .form {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .enquiry-intro {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+}
+
+/* =========================================================
+   EMBEDDED TACTICAL LEAFLET MAP MODAL
+========================================================= */
+
+.map-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 2, 4, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.map-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.map-modal-dialog {
+  width: min(920px, 100%);
+  max-height: 94vh;
+  background: #07090e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.3s var(--ease-cinematic);
+}
+
+.map-modal-backdrop.active .map-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.map-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: #04060a;
+  flex-wrap: wrap;
+}
+
+.map-modal-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-modal-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+}
+
+.map-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 440px;
+}
+
+.map-search-input {
+  width: 100%;
+  background: #0e121a;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xs);
+  padding: 8px 34px 8px 12px;
+  color: #ffffff;
+  font-size: 12.5px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.map-search-input:focus {
+  border-color: var(--red);
+}
+
+.map-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: #090c12;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xs);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 2050;
+  display: none;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+}
+
+.map-search-item {
+  padding: 9px 12px;
+  font-size: 12px;
+  color: #d1d7e2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.map-search-item:hover {
+  background: rgba(255, 34, 62, 0.16);
+  color: #ffffff;
+}
+
+.map-modal-close {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.map-modal-close:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.map-canvas-container {
+  position: relative;
+  height: 430px;
+  width: 100%;
+  background: #05070a;
+}
+
+#mapPickerView {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Subtle tactical contrast filter for OSM tiles to blend with dark cinematic theme */
+.leaflet-tile {
+  filter: brightness(0.85) contrast(1.12) saturate(0.9);
+}
+
+.map-floating-bar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-locate-btn {
+  background: #080a10;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-xs);
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.map-locate-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-1px);
+}
+
+.map-hint-banner {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(4, 6, 10, 0.90);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-xs);
+  padding: 6px 14px;
+  font-size: 11px;
+  color: #a4adb8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.map-modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #04060a;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.map-selection-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-coords-pill {
+  font-family: monospace;
+  font-size: 11.5px;
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-resolved-address-box {
+  background: #0b0e16;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-xs);
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: #f1f4f8;
+  min-height: 42px;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  word-break: break-word;
+}
+
+.map-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .map-modal-backdrop {
+    padding: 0;
+  }
+
+  .map-modal-dialog {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
+    transform: none !important;
+  }
+
+  .map-modal-header {
+    padding: 10px 14px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .map-modal-title {
+    font-size: 12px;
+    flex: 1;
+  }
+
+  .map-search-wrap {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 2px;
+  }
+
+  .map-canvas-container {
+    height: auto;
+    flex: 1;
+    min-height: 190px;
+  }
+
+  .map-floating-bar {
+    top: 8px;
+    right: 8px;
+  }
+
+  .map-locate-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .map-hint-banner {
+    display: none;
+  }
+
+  .map-modal-footer {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .map-coords-pill {
+    font-size: 10px;
+  }
+
+  .map-resolved-address-box {
+    padding: 6px 10px;
+    font-size: 11px;
+    min-height: 36px;
+    max-height: 48px;
+    overflow-y: auto;
+  }
+
+  .map-modal-actions {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .map-modal-actions .btn {
+    flex: 1;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 10.5px;
+    justify-content: center;
+  }
+}
+
+/* Custom Marker */
+.custom-map-marker {
+  position: relative;
+}
+
+.marker-pin-wrap {
+  position: relative;
+  width: 32px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #ff223e;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -24px 0 0 -15px;
+  box-shadow: 0 0 16px rgba(255, 34, 62, 0.85);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.marker-pin-dot {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta {
+  padding: 110px 0 130px;
+}
+
+.cta-box {
+  min-height: 480px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: flex-end;
+  background: #06080e;
+  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.75);
+}
+
+.cta-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 34, 62, 0.28) 0%,
+    transparent 55%
+  );
+  z-index: 1;
+}
+
+.cta-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.94) 100%
+  );
+  z-index: 1;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.48) saturate(0.85);
+  transition: transform 1.2s var(--ease-cinematic);
+}
+
+.cta-box:hover .cta-bg img {
+  transform: scale(1.05);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px;
+  max-width: 800px;
+}
+
+.cta-content .eyebrow {
+  color: #ff6b81;
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.cta-content h2 {
+  margin-top: 14px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(42px, 8vw, 88px);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.cta-content p {
+  max-width: 540px;
+  margin-top: 18px;
+  color: #c7ced8;
+  font-size: 14.5px;
+  line-height: 1.6;
 }
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
-footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:35px 0 100px;
-  background:#040507;
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 50px 0 110px;
+  background: #020305;
 }
 
-.footer-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:25px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
 }
 
-.footer-brand{
-  font-size:20px;
-  font-weight:950;
-  letter-spacing:-.04em;
+.footer-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
 }
 
-.footer-brand span{
-  color:var(--red);
+.footer-brand span {
+  color: var(--red);
 }
 
-.footer-text{
-  color:#69727e;
-  font-size:11px;
-  max-width:400px;
+.footer-text {
+  margin-top: 8px;
+  color: #727c8a;
+  font-size: 12px;
+  max-width: 480px;
+  line-height: 1.6;
 }
 
-.footer-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px 20px;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
 }
 
-.footer-links a{
-  color:#858e99;
-  font-size:9px;
-  letter-spacing:.12em;
-  font-weight:800;
+.footer-links a {
+  color: #8f98a5;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  transition: color 0.2s ease;
 }
 
-.copyright{
-  margin-top:30px;
-  color:#4d5560;
-  font-size:8px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
+.footer-links a:hover {
+  color: #ffffff;
 }
 
-/* =========================================================
-   FLOATING ACTIONS
-========================================================= */
-
-.floating{
-  position:fixed;
-  z-index:900;
-  right:15px;
-  bottom:max(15px,env(safe-area-inset-bottom));
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-}
-
-.float-btn{
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,255,255,.15);
-  color:#fff;
-  box-shadow:0 12px 35px rgba(0,0,0,.4);
-  font-weight:900;
-  font-size:18px;
-  transition:.25s ease;
-}
-
-.float-btn:hover{
-  transform:scale(1.08);
-}
-
-.float-call{
-  background:#161a20;
-}
-
-.float-wa{
-  background:#17a866;
-  box-shadow:
-    0 10px 35px rgba(23,168,102,.28);
+.copyright {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #555d68;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 /* =========================================================
-   REVEAL
+   FLOATING BUTTONS (QUICK ACTIONS)
 ========================================================= */
 
-.reveal{
-  opacity:0;
-  transform:translateY(28px);
+.floating {
+  position: fixed;
+  z-index: 950;
+  right: 20px;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  font-weight: 900;
+  font-size: 20px;
+  transition: transform 0.25s var(--ease-cinematic), box-shadow 0.25s ease;
+  position: relative;
+}
+
+.float-btn:hover {
+  transform: scale(1.10) translateY(-2px);
+}
+
+.float-call {
+  background: #0e1118;
+  border-color: rgba(255, 34, 62, 0.55);
+  box-shadow: 0 10px 30px rgba(255, 34, 62, 0.3);
+}
+
+.float-call:hover {
+  background: var(--red);
+  box-shadow: 0 15px 40px rgba(255, 34, 62, 0.55);
+}
+
+.float-wa {
+  background: #10a361;
+  border-color: rgba(16, 163, 97, 0.65);
+  box-shadow: 0 10px 30px rgba(16, 163, 97, 0.35);
+}
+
+.float-wa:hover {
+  background: #0ea862;
+  box-shadow: 0 15px 40px rgba(16, 163, 97, 0.6);
+}
+
+/* =========================================================
+   CINEMATIC SCROLL REVEAL ANIMATIONS
+========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
   transition:
-    opacity .75s ease,
-    transform .75s cubic-bezier(.2,.7,.2,1);
+    opacity 0.75s var(--ease-cinematic),
+    transform 0.75s var(--ease-cinematic);
+  will-change: opacity, transform;
 }
 
-.reveal.visible{
-  opacity:1;
-  transform:none;
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay utility classes */
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.20s; }
+.reveal-delay-3 { transition-delay: 0.30s; }
+.reveal-delay-4 { transition-delay: 0.40s; }
+
+/* =========================================================
+   RESPONSIVE DESIGN SYSTEM — ALL DEVICE TIERS
+   320px–374px | 375px–430px | 431px–767px | 768px–1023px | 1024px–1439px | 1440px+
+========================================================= */
+
+/* --- TIER: TABLET & DESKTOP (>= 768px) --- */
+@media (min-width: 768px) {
+  .section {
+    padding: 90px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-card:first-child {
+    grid-column: span 2;
+    min-height: 440px;
+  }
+
+  .service-card:first-child .service-content {
+    min-height: 440px;
+  }
+
+  .freezer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .process {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+  }
+
+  .field.full {
+    grid-column: span 2;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 30px;
+  }
+}
+
+/* --- TIER: LARGE TABLET & COMPACT DESKTOP (>= 960px) --- */
+@media (min-width: 960px) {
+  .enquiry-wrap {
+    grid-template-columns: minmax(320px, 390px) 1fr;
+    gap: 36px;
+  }
+
+  .feature {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+  }
+
+  .feature.reverse {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}
+
+/* --- TIER: LAPTOP & DESKTOP (>= 1024px) --- */
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+    gap: 22px;
+  }
+
+  .nav-hamburger {
+    display: none;
+  }
+
+  .section {
+    padding: 105px 0;
+  }
+}
+
+/* --- TIER: WIDE DESKTOP (>= 1080px) --- */
+@media (min-width: 1080px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .service-card:first-child {
+    grid-column: span 2;
+  }
+
+  .service-card {
+    min-height: 440px;
+  }
+
+  .service-content {
+    min-height: 440px;
+  }
+
+  .hero-content {
+    padding-bottom: 100px;
+  }
+}
+
+/* --- TIER: ULTRA WIDE DESKTOP (>= 1440px) --- */
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1320px;
+  }
+
+  .hero h1 {
+    font-size: 110px;
+  }
+
+  .cta-box {
+    min-height: 520px;
+  }
+}
+
+/* --- TIER: MOBILE / PHABLET (<= 767px) --- */
+@media (max-width: 767px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-head {
+    margin-bottom: 34px;
+  }
+
+  .section-title {
+    font-size: clamp(26px, 7vw, 42px);
+  }
+
+  .section-desc {
+    font-size: 13.5px;
+    margin-top: 14px;
+  }
+
+  /* Hero Mobile */
+  .hero {
+    padding-top: 78px;
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding-bottom: max(48px, env(safe-area-inset-bottom));
+    padding-top: 20px;
+  }
+
+  .hero-kicker {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 8.8vw, 56px);
+    line-height: 0.94;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin-top: 18px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .hero-status {
+    margin-top: 26px;
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  /* Services Mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    min-height: 340px;
+  }
+
+  .service-card:first-child {
+    grid-column: auto;
+    min-height: 340px;
+  }
+
+  .service-content {
+    min-height: 340px;
+    padding: 24px 20px;
+  }
+
+  .service-content h3 {
+    font-size: clamp(22px, 5.5vw, 34px);
+  }
+
+  .service-content p {
+    font-size: 12.5px;
+  }
+
+  .service-number {
+    top: 22px;
+    left: 22px;
+    font-size: 10px;
+  }
+
+  .service-tag {
+    margin-left: 30px;
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+
+  /* Features Split Mobile */
+  .feature {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .feature.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-media {
+    min-height: 260px;
+    max-height: 360px;
+  }
+
+  .feature-media img {
+    min-height: 260px;
+  }
+
+  .feature-copy {
+    padding: 28px 20px;
+  }
+
+  .feature-copy h2 {
+    font-size: clamp(24px, 6vw, 42px);
+  }
+
+  .feature-copy p {
+    font-size: 13px;
+  }
+
+  /* Freezer Grid Mobile */
+  .freezer-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .freezer-card {
+    min-height: 340px;
+  }
+
+  .freezer-content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .freezer-content h3 {
+    font-size: clamp(22px, 5.5vw, 34px);
+  }
+
+  .freezer-content p {
+    font-size: 12.5px;
+  }
+
+  /* Process Steps Mobile */
+  .process {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .process-step {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+
+  .process-step h3 {
+    font-size: 20px;
+  }
+
+  /* Enquiry Section Mobile */
+  .enquiry-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .enquiry-intro {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .enquiry-intro h2 {
+    font-size: clamp(30px, 7vw, 48px);
+  }
+
+  .form {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .location-input-wrap {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .location-confirm-btn {
+    width: 100%;
+    height: 44px;
+  }
+
+  .field-label-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .map-launch-btn {
+    font-size: 9.5px;
+    padding: 5px 10px;
+  }
+
+  .route-preview-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  /* Final CTA Mobile */
+  .cta-box {
+    min-height: 360px;
+    border-radius: 18px;
+  }
+
+  .cta-content {
+    padding: 30px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(30px, 8vw, 54px);
+  }
+
+  .final-cta {
+    padding: 65px 0 90px;
+  }
+
+  /* Footer Mobile */
+  footer {
+    padding: 40px 0 115px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .footer-links {
+    gap: 12px 18px;
+  }
+
+  .footer-links a {
+    padding: 6px 0;
+  }
+
+  /* Floating Buttons Mobile */
+  .floating {
+    right: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    gap: 10px;
+  }
+
+  .float-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+}
+
+/* --- TIER: COMPACT MOBILE (<= 480px) --- */
+@media (max-width: 480px) {
+  .topbar .brand-text small {
+    display: none;
+  }
+
+  .nav-call {
+    padding: 7px 11px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .contact-row {
+    padding: 14px 16px;
+  }
+
+  .contact-row strong {
+    font-size: 14.5px;
+  }
+
+  .contact-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .form {
+    padding: 20px 14px;
+  }
+
+  .enquiry-intro {
+    padding: 22px 16px;
+  }
+
+  .form-title {
+    font-size: 12px;
+  }
+}
+
+/* --- TIER: SMALL MOBILE (320px–374px) --- */
+@media (max-width: 374px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .topbar .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .topbar .brand-text strong {
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-call {
+    padding: 6px 9px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .nav-hamburger {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .btn {
+    padding: 0 16px;
+    font-size: 10.5px;
+  }
+
+  .form-group-header .group-title {
+    font-size: 10.5px;
+  }
+
+  .form-submit {
+    font-size: 11px;
+  }
 }
 
 /* =========================================================
-   RESPONSIVE
+   ACCESSIBILITY & PREFERS-REDUCED-MOTION
 ========================================================= */
 
-@media(min-width:700px){
-
-  .container{
-    width:min(var(--max),calc(100% - 70px));
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
   }
 
-  .nav-links{
-    display:flex;
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
-  .hero-content{
-    padding-top:170px;
-    padding-bottom:110px;
+  .hero-media img,
+  .service-image img,
+  .feature-media img,
+  .freezer-card img,
+  .cta-bg img {
+    transform: none !important;
   }
 
-  .services-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .service-card:first-child{
-    grid-column:span 2;
-    min-height:500px;
-  }
-
-  .service-card:first-child .service-content{
-    min-height:500px;
-  }
-
-  .feature{
-    grid-template-columns:1.15fr .85fr;
-  }
-
-  .freezer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .process{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .enquiry-wrap{
-    grid-template-columns:.85fr 1.15fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .field.full{
-    grid-column:span 2;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr auto;
-    align-items:start;
-  }
-}
-
-@media(min-width:1050px){
-
-  .services-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .service-card:first-child{
-    grid-column:span 2;
-  }
-
-  .service-card{
-    min-height:430px;
-  }
-
-  .service-content{
-    min-height:430px;
-  }
-
-  .hero-content{
-    padding-bottom:120px;
-  }
-}
-
-/* =========================================================
-   ACCESSIBILITY / PERFORMANCE
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-  *,
-  *::before,
-  *::after{
-    scroll-behavior:auto !important;
-    animation:none !important;
-    transition:none !important;
-  }
-
-  .reveal{
-    opacity:1;
-    transform:none;
+  .ticker-track {
+    animation: none !important;
+    overflow-x: auto;
   }
 }
 </style>
 </head>
 
 <body>
+
+<!-- SCROLL PROGRESS INDICATOR -->
+<div id="scrollProgress"></div>
+
+<!-- =======================================================
+     MOBILE SIDEBAR & BACKDROP
+======================================================= -->
+
+<div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+<aside id="mobileSidebar" class="sidebar-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+  <div class="sidebar-header">
+    <div class="brand">
+      <div class="brand-mark">
+        <span></span>
+      </div>
+      <div class="brand-text">
+        <strong>IYARKAI SERVICE</strong>
+        <small>EMERGENCY • TRANSPORT • RECOVERY</small>
+      </div>
+    </div>
+    <button class="sidebar-close" id="sidebarClose" type="button" aria-label="Close navigation menu">✕</button>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#home" class="sidebar-link active">HOME</a>
+    <a href="#services" class="sidebar-link">SERVICES</a>
+    <a href="#ambulance" class="sidebar-link">AMBULANCE</a>
+    <a href="#freezer" class="sidebar-link">FREEZER</a>
+    <a href="#recovery" class="sidebar-link">RECOVERY</a>
+    <a href="#enquiry" class="sidebar-link">ENQUIRY</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a class="btn btn-primary" href="tel:+919345658295">
+      ☎ CALL 9345658295
+    </a>
+    <a class="btn btn-secondary" href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20service." target="_blank" rel="noopener">
+      WhatsApp Enquiry
+    </a>
+  </div>
+</aside>
+
 
 <!-- =======================================================
      HEADER
@@ -1371,7 +3056,7 @@ footer{
 
   <div class="container nav">
 
-    <a href="#home" class="brand">
+    <a href="#home" class="brand" aria-label="IYARKAI SERVICE Home">
 
       <div class="brand-mark">
         <span></span>
@@ -1384,8 +3069,8 @@ footer{
 
     </a>
 
-    <nav class="nav-links">
-      <a href="#home">HOME</a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="#home" class="active">HOME</a>
       <a href="#services">SERVICES</a>
       <a href="#ambulance">AMBULANCE</a>
       <a href="#freezer">FREEZER</a>
@@ -1393,14 +3078,29 @@ footer{
       <a href="#enquiry">ENQUIRY</a>
     </nav>
 
-    <a
-      class="nav-call"
-      href="tel:+919345658295"
-      aria-label="Call IYARKAI SERVICE"
-    >
-      <span class="nav-call-dot"></span>
-      9345658295
-    </a>
+    <div class="nav-actions">
+      <a
+        class="nav-call"
+        href="tel:+919345658295"
+        aria-label="Call IYARKAI SERVICE at 9345658295"
+      >
+        <span class="nav-call-dot"></span>
+        9345658295
+      </a>
+
+      <button
+        class="nav-hamburger"
+        id="navHamburger"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileSidebar"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
 
   </div>
 
@@ -1408,18 +3108,23 @@ footer{
 
 
 <!-- =======================================================
-     HERO
+     MAIN
 ======================================================= -->
 
 <main>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
 
 <section id="home" class="hero">
 
   <div class="hero-media">
     <img
       src="https://images.pexels.com/videos/27974834/ambulance-27974834.jpeg?auto=compress&dpr=1&h=1200&w=1920"
-      alt="Emergency ambulance at night"
+      alt="Emergency ambulance at night with flashing red lights"
       fetchpriority="high"
+      decoding="async"
     >
   </div>
 
@@ -1482,7 +3187,7 @@ footer{
      TICKER
 ======================================================= -->
 
-<div class="ticker">
+<div class="ticker" aria-hidden="true">
 
   <div class="ticker-track">
 
@@ -1550,7 +3255,7 @@ footer{
 
 
 <!-- =======================================================
-     SERVICES
+     SERVICES (01 / SERVICES)
 ======================================================= -->
 
 <section id="services" class="section">
@@ -1583,16 +3288,17 @@ footer{
       <!-- AMBULANCE -->
 
       <article
-        class="service-card reveal"
-        style="--card-glow:rgba(255,48,79,.22)"
+        class="service-card reveal reveal-delay-1"
+        style="--card-glow:rgba(255,48,79,.24)"
       >
 
         <div class="service-image">
 
           <img
             src="https://assets.st-note.com/production/uploads/images/220875759/58dd3ffb01264500bd8b21557eaae380.jpg"
-            alt="Emergency ambulance at night"
+            alt="Emergency ambulance on night dispatch"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1625,16 +3331,17 @@ footer{
       <!-- ICU -->
 
       <article
-        class="service-card reveal"
-        style="--card-glow:rgba(57,168,255,.22)"
+        class="service-card reveal reveal-delay-2"
+        style="--card-glow:rgba(47,158,255,.24)"
       >
 
         <div class="service-image">
 
           <img
             src="https://www.ambuready.in/assets/img/icu-ambulance.webp"
-            alt="ICU ambulance interior"
+            alt="ICU ambulance interior with ventilator and stretcher"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1667,16 +3374,17 @@ footer{
       <!-- BODY TRANSPORT -->
 
       <article
-        class="service-card reveal"
-        style="--card-glow:rgba(170,170,170,.14)"
+        class="service-card reveal reveal-delay-3"
+        style="--card-glow:rgba(180,180,180,.18)"
       >
 
         <div class="service-image">
 
           <img
             src="https://transportpokojnika.com/pogrebni-kombi-sa-sandukom.jpg"
-            alt="Respectful body transportation vehicle"
+            alt="Respectful body transportation vehicle interior"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1709,16 +3417,17 @@ footer{
       <!-- NORMAL FREEZER -->
 
       <article
-        class="service-card reveal"
-        style="--card-glow:rgba(57,216,255,.18)"
+        class="service-card reveal reveal-delay-1"
+        style="--card-glow:rgba(34,211,238,.20)"
       >
 
         <div class="service-image">
 
           <img
             src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/metal-ss-dead-body-freezer-box-20240619123924747.jpg"
-            alt="Normal freezer box"
+            alt="Normal stainless steel dead body freezer box"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1751,16 +3460,17 @@ footer{
       <!-- PREMIUM FREEZER -->
 
       <article
-        class="service-card reveal"
-        style="--card-glow:rgba(255,180,60,.20)"
+        class="service-card reveal reveal-delay-2"
+        style="--card-glow:rgba(255,180,60,.22)"
       >
 
         <div class="service-image">
 
           <img
             src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/dead-body-freezer-box-for-hospitalsmedical-colleges20230926115239.jpg"
-            alt="Premium freezer box"
+            alt="Premium hospital-grade dead body freezer box"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1794,16 +3504,17 @@ footer{
 
       <article
         id="recovery"
-        class="service-card reveal"
-        style="--card-glow:rgba(255,170,50,.22)"
+        class="service-card reveal reveal-delay-3"
+        style="--card-glow:rgba(255,170,50,.24)"
       >
 
         <div class="service-image">
 
           <img
             src="https://storage.colortasarim.com/images/b416b754-fe7c-41f1-bd66-8fccb3aa7dec.png"
-            alt="Vehicle recovery tow truck at night"
+            alt="Vehicle recovery flatbed tow truck with amber beacons"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1836,16 +3547,17 @@ footer{
       <!-- LONG DISTANCE -->
 
       <article
-        class="service-card reveal"
-        style="--card-glow:rgba(100,150,255,.18)"
+        class="service-card reveal reveal-delay-1"
+        style="--card-glow:rgba(100,150,255,.20)"
       >
 
         <div class="service-image">
 
           <img
             src="https://images.pexels.com/videos/5266051/pexels-photo-5266051.jpeg?auto=compress&dpr=1&h=1000&w=1600"
-            alt="Long distance transport on highway at night"
+            alt="Long distance highway transport transit at night"
             loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -1882,7 +3594,7 @@ footer{
 
 
 <!-- =======================================================
-     AMBULANCE DETAIL
+     AMBULANCE DETAIL (02 / MEDICAL TRANSPORT)
 ======================================================= -->
 
 <section id="ambulance" class="section">
@@ -1894,9 +3606,10 @@ footer{
       <div class="feature-media">
 
         <img
-          src="https://images.pexels.com/videos/27974834/ambulance-27974834.jpeg?auto=compress&dpr=1&h=1200&w=1920"
-          alt="Ambulance emergency service"
+          src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=1200&q=80"
+          alt="Emergency ambulance on call with flashing beacon lights"
           loading="lazy"
+          decoding="async"
         >
 
         <span class="feature-label">
@@ -1949,7 +3662,7 @@ footer{
         <a
           href="tel:+919345658295"
           class="btn btn-primary"
-          style="margin-top:25px"
+          style="margin-top:28px"
         >
           CALL 9345658295
         </a>
@@ -1964,14 +3677,14 @@ footer{
 
 
 <!-- =======================================================
-     ICU
+     ICU (03 / CRITICAL TRANSFER)
 ======================================================= -->
 
 <section id="icu" class="section">
 
   <div class="container">
 
-    <div class="feature reveal">
+    <div class="feature reverse reveal">
 
       <div class="feature-copy">
 
@@ -2016,7 +3729,7 @@ footer{
           target="_blank"
           rel="noopener"
           class="btn btn-primary"
-          style="margin-top:25px"
+          style="margin-top:28px"
         >
           WHATSAPP ICU ENQUIRY
         </a>
@@ -2027,8 +3740,9 @@ footer{
 
         <img
           src="https://www.ambuready.in/assets/img/icu-ambulance.webp"
-          alt="ICU ambulance interior"
+          alt="ICU patient transfer ambulance interior setup"
           loading="lazy"
+          decoding="async"
         >
 
         <span class="feature-label">
@@ -2045,7 +3759,7 @@ footer{
 
 
 <!-- =======================================================
-     BODY TRANSPORT
+     BODY TRANSPORT (04 / BODY TRANSPORT)
 ======================================================= -->
 
 <section id="bodytransport" class="section">
@@ -2058,8 +3772,9 @@ footer{
 
         <img
           src="https://transportpokojnika.com/pogrebni-kombi-sa-sandukom.jpg"
-          alt="Respectful body transportation"
+          alt="Respectful body transportation vehicle"
           loading="lazy"
+          decoding="async"
         >
 
         <span class="feature-label">
@@ -2112,7 +3827,7 @@ footer{
         <a
           href="#enquiry"
           class="btn btn-primary"
-          style="margin-top:25px"
+          style="margin-top:28px"
         >
           MAKE ENQUIRY
         </a>
@@ -2127,7 +3842,7 @@ footer{
 
 
 <!-- =======================================================
-     FREEZER
+     FREEZER (05 / FREEZER BOX)
 ======================================================= -->
 
 <section id="freezer" class="section">
@@ -2157,12 +3872,13 @@ footer{
     <div class="freezer-grid">
 
 
-      <article class="freezer-card reveal">
+      <article class="freezer-card reveal reveal-delay-1">
 
         <img
           src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/metal-ss-dead-body-freezer-box-20240619123924747.jpg"
-          alt="Normal freezer box"
+          alt="Normal stainless steel dead body freezer box"
           loading="lazy"
+          decoding="async"
         >
 
         <div class="freezer-content">
@@ -2186,12 +3902,13 @@ footer{
       </article>
 
 
-      <article class="freezer-card premium reveal">
+      <article class="freezer-card premium reveal reveal-delay-2">
 
         <img
           src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/Catalogue/dead-body-freezer-box-for-hospitalsmedical-colleges20230926115239.jpg"
-          alt="Premium freezer box"
+          alt="Premium hospital-grade dead body freezer box with glass top"
           loading="lazy"
+          decoding="async"
         >
 
         <div class="freezer-content">
@@ -2222,14 +3939,14 @@ footer{
 
 
 <!-- =======================================================
-     RECOVERY
+     RECOVERY DETAIL (06 / ROAD ASSISTANCE)
 ======================================================= -->
 
 <section id="recovery-detail" class="section">
 
   <div class="container">
 
-    <div class="feature reveal">
+    <div class="feature reverse reveal">
 
       <div class="feature-copy">
 
@@ -2273,7 +3990,7 @@ footer{
           target="_blank"
           rel="noopener"
           class="btn btn-primary"
-          style="margin-top:25px"
+          style="margin-top:28px"
         >
           WHATSAPP RECOVERY
         </a>
@@ -2283,9 +4000,10 @@ footer{
       <div class="feature-media">
 
         <img
-          src="https://storage.colortasarim.com/images/b416b754-fe7c-41f1-bd66-8fccb3aa7dec.png"
-          alt="Vehicle recovery tow truck"
+          src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80"
+          alt="Roadside vehicle recovery flatbed tow truck with amber warning lights"
           loading="lazy"
+          decoding="async"
         >
 
         <span class="feature-label">
@@ -2302,7 +4020,7 @@ footer{
 
 
 <!-- =======================================================
-     LONG DISTANCE
+     LONG DISTANCE (07 / LONG ROUTE)
 ======================================================= -->
 
 <section id="longdistance" class="section">
@@ -2315,8 +4033,9 @@ footer{
 
         <img
           src="https://images.pexels.com/videos/5266051/pexels-photo-5266051.jpeg?auto=compress&dpr=1&h=1200&w=1920"
-          alt="Long distance transport highway"
+          alt="Long distance transport night highway transit"
           loading="lazy"
+          decoding="async"
         >
 
         <span class="feature-label">
@@ -2365,7 +4084,7 @@ footer{
         <a
           href="#enquiry"
           class="btn btn-primary"
-          style="margin-top:25px"
+          style="margin-top:28px"
         >
           PLAN TRANSPORT
         </a>
@@ -2380,7 +4099,7 @@ footer{
 
 
 <!-- =======================================================
-     HOW IT WORKS
+     HOW IT WORKS (08 / SIMPLE PROCESS)
 ======================================================= -->
 
 <section class="section">
@@ -2404,7 +4123,7 @@ footer{
 
     <div class="process">
 
-      <article class="process-step reveal">
+      <article class="process-step reveal reveal-delay-1">
 
         <div class="process-number">
           STEP 01
@@ -2421,7 +4140,7 @@ footer{
       </article>
 
 
-      <article class="process-step reveal">
+      <article class="process-step reveal reveal-delay-2">
 
         <div class="process-number">
           STEP 02
@@ -2439,7 +4158,7 @@ footer{
       </article>
 
 
-      <article class="process-step reveal">
+      <article class="process-step reveal reveal-delay-3">
 
         <div class="process-number">
           STEP 03
@@ -2474,9 +4193,14 @@ footer{
     <div class="enquiry-wrap">
 
 
-      <!-- LEFT -->
+      <!-- LEFT: CONTACT & DISPATCH STACK -->
 
       <div class="enquiry-intro reveal">
+
+        <div class="intro-badge">
+          <span class="badge-dot"></span>
+          24/7 ACTIVE DISPATCH
+        </div>
 
         <h2>
           NEED<br>
@@ -2508,7 +4232,7 @@ footer{
             <a
               class="contact-btn"
               href="tel:+919345658295"
-              aria-label="Call primary number"
+              aria-label="Call primary number 9345658295"
             >
               ☎
             </a>
@@ -2535,7 +4259,7 @@ footer{
               href="https://wa.me/919489869164"
               target="_blank"
               rel="noopener"
-              aria-label="WhatsApp primary number"
+              aria-label="WhatsApp primary number 9489869164"
             >
               ◉
             </a>
@@ -2560,7 +4284,7 @@ footer{
             <a
               class="contact-btn"
               href="tel:+918220467605"
-              aria-label="Call alternative number"
+              aria-label="Call alternative number 8220467605"
             >
               ☎
             </a>
@@ -2572,221 +4296,286 @@ footer{
       </div>
 
 
-      <!-- FORM -->
+      <!-- FORM: CLEAN, REORGANIZED DISPATCH CONSOLE -->
 
       <form id="enquiryForm" class="form reveal">
 
-        <div class="form-title">
-          NEW SERVICE ENQUIRY
+        <div class="form-header">
+          <div class="form-title">
+            NEW SERVICE ENQUIRY
+          </div>
+          <p class="form-subtitle">
+            Direct Emergency Dispatch • Verified WhatsApp Confirmation
+          </p>
         </div>
 
+        <div id="formStatusMsg" class="form-status-msg" role="alert"></div>
 
-        <div class="form-grid">
-
-
-          <!-- SERVICE -->
-
-          <div class="field full">
-
-            <label for="service">
-              Select Service
-            </label>
-
-            <select id="service" required>
-
-              <option value="">
-                Select service
-              </option>
-
-              <option>
-                Ambulance
-              </option>
-
-              <option>
-                ICU Ambulance
-              </option>
-
-              <option>
-                Body Transportation
-              </option>
-
-              <option>
-                Normal Freezer Box
-              </option>
-
-              <option>
-                Premium Freezer Box
-              </option>
-
-              <option>
-                Vehicle Recovery
-              </option>
-
-              <option>
-                Long Distance Transport
-              </option>
-
-            </select>
-
+        <!-- 01: SERVICE SELECTION -->
+        <div class="form-group-block">
+          <div class="form-group-header">
+            <span class="group-num">01</span>
+            <span class="group-title">Service Selection</span>
           </div>
 
+          <div class="form-grid">
 
-          <!-- WHATSAPP NUMBER -->
+            <!-- SERVICE -->
+            <div class="field">
+              <label for="service">
+                Select Service
+              </label>
 
-          <div class="field full">
+              <select id="service" required>
+                <option value="">
+                  Select service
+                </option>
+                <option>
+                  Ambulance
+                </option>
+                <option>
+                  ICU Ambulance
+                </option>
+                <option>
+                  Body Transportation
+                </option>
+                <option>
+                  Normal Freezer Box
+                </option>
+                <option>
+                  Premium Freezer Box
+                </option>
+                <option>
+                  Vehicle Recovery
+                </option>
+                <option>
+                  Long Distance Transport
+                </option>
+              </select>
+            </div>
 
-            <label for="whatsapp">
-              Send Enquiry To
-            </label>
+            <!-- WHATSAPP NUMBER -->
+            <div class="field">
+              <label for="whatsapp">
+                Send Enquiry To
+              </label>
 
-            <select id="whatsapp">
-
-              <option value="919489869164">
-                WhatsApp — 9489869164 (Primary)
-              </option>
-
-              <option value="918220467605">
-                WhatsApp — 8220467605 (Alternative)
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <!-- NAME -->
-
-          <div class="field">
-
-            <label for="name">
-              Name
-            </label>
-
-            <input
-              id="name"
-              type="text"
-              placeholder="Your name"
-              autocomplete="name"
-              required
-            >
-
-          </div>
-
-
-          <!-- CONTACT -->
-
-          <div class="field">
-
-            <label for="contact">
-              Contact Number
-            </label>
-
-            <input
-              id="contact"
-              type="tel"
-              placeholder="Your phone number"
-              autocomplete="tel"
-              required
-            >
+              <select id="whatsapp">
+                <option value="919489869164">
+                  WhatsApp — 9489869164 (Primary)
+                </option>
+                <option value="918220467605">
+                  WhatsApp — 8220467605 (Alternative)
+                </option>
+              </select>
+            </div>
 
           </div>
-
-
-          <!-- PICKUP -->
-
-          <div class="field">
-
-            <label for="pickup">
-              Pickup Location
-            </label>
-
-            <input
-              id="pickup"
-              type="text"
-              placeholder="Pickup location"
-              required
-            >
-
-          </div>
-
-
-          <!-- DESTINATION -->
-
-          <div class="field">
-
-            <label for="destination">
-              Destination
-            </label>
-
-            <input
-              id="destination"
-              type="text"
-              placeholder="Destination"
-            >
-
-          </div>
-
-
-          <!-- DATE TIME -->
-
-          <div class="field">
-
-            <label for="datetime">
-              Date / Time
-            </label>
-
-            <input
-              id="datetime"
-              type="datetime-local"
-            >
-
-          </div>
-
-
-          <!-- VEHICLE -->
-
-          <div class="field">
-
-            <label for="vehicle">
-              Vehicle / Requirement
-            </label>
-
-            <input
-              id="vehicle"
-              type="text"
-              placeholder="Vehicle / patient / freezer requirement"
-            >
-
-          </div>
-
-
-          <!-- DETAILS -->
-
-          <div class="field full">
-
-            <label for="details">
-              Additional Details
-            </label>
-
-            <textarea
-              id="details"
-              placeholder="Add any important details..."
-            ></textarea>
-
-          </div>
-
         </div>
 
+        <!-- 02: CONTACT INFORMATION -->
+        <div class="form-group-block">
+          <div class="form-group-header">
+            <span class="group-num">02</span>
+            <span class="group-title">Contact Information</span>
+          </div>
 
-        <button
-          type="submit"
-          class="btn btn-primary form-submit"
-        >
-          SEND ENQUIRY ON WHATSAPP →
-        </button>
+          <div class="form-grid">
 
-        <div class="form-note">
-          WhatsApp will open with your enquiry pre-filled.
+            <!-- NAME -->
+            <div class="field">
+              <label for="name">
+                Name
+              </label>
+
+              <input
+                id="name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <!-- CONTACT -->
+            <div class="field">
+              <label for="contact">
+                Contact Number
+              </label>
+
+              <input
+                id="contact"
+                type="tel"
+                placeholder="Your phone number"
+                autocomplete="tel"
+                required
+              >
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 03: LOCATION DETAILS (Conditional: hidden for freezer services) -->
+        <div class="form-group-block" id="locationSectionGroup">
+          <div class="form-group-header" id="locationSectionHeader">
+            <span class="group-num">03</span>
+            <span class="group-title">Location & Route</span>
+          </div>
+
+          <div class="form-grid">
+
+            <!-- PICKUP WITH INTERACTIVE MAP PICKER -->
+            <div class="field full location-field" id="pickupFieldGroup">
+              <div class="field-label-row">
+                <label for="pickup">
+                  Pickup Location
+                </label>
+                <button
+                  type="button"
+                  class="map-launch-btn"
+                  id="openPickupMapBtn"
+                  title="Open interactive map to choose pickup"
+                >
+                  🗺️ Choose Pickup on Map
+                </button>
+              </div>
+
+              <div class="location-input-wrap">
+                <input
+                  id="pickup"
+                  type="text"
+                  placeholder="Click 'Choose Pickup on Map' or enter location"
+                  autocomplete="street-address"
+                  required
+                >
+                <button
+                  type="button"
+                  class="location-confirm-btn"
+                  id="confirmPickupBtn"
+                >
+                  Confirm Location
+                </button>
+              </div>
+
+              <div class="location-status-bar" id="pickupStatusBar"></div>
+            </div>
+
+            <!-- DESTINATION WITH INTERACTIVE MAP PICKER -->
+            <div class="field full location-field" id="destFieldGroup">
+              <div class="field-label-row">
+                <label for="destination">
+                  Destination
+                </label>
+                <button
+                  type="button"
+                  class="map-launch-btn"
+                  id="openDestMapBtn"
+                  title="Open interactive map to choose destination"
+                >
+                  🗺️ Choose Destination on Map
+                </button>
+              </div>
+
+              <div class="location-input-wrap">
+                <input
+                  id="destination"
+                  type="text"
+                  placeholder="Click 'Choose Destination on Map' or enter location"
+                  autocomplete="street-address"
+                >
+                <button
+                  type="button"
+                  class="location-confirm-btn"
+                  id="confirmDestBtn"
+                >
+                  Confirm Location
+                </button>
+              </div>
+
+              <div class="location-status-bar" id="destStatusBar"></div>
+            </div>
+
+            <!-- ROUTE PREVIEW BADGE -->
+            <div class="field full" id="routePreviewWrap" style="display:none; margin-top:-2px;">
+              <div class="route-preview-badge" id="routePreviewBadge"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 04: SCHEDULE & REQUIREMENT -->
+        <div class="form-group-block">
+          <div class="form-group-header">
+            <span class="group-num">04</span>
+            <span class="group-title">Schedule & Requirement</span>
+          </div>
+
+          <div class="form-grid">
+
+            <!-- DATE TIME -->
+            <div class="field">
+              <label for="datetime">
+                Date / Time
+              </label>
+
+              <input
+                id="datetime"
+                type="datetime-local"
+              >
+            </div>
+
+            <!-- VEHICLE -->
+            <div class="field">
+              <label for="vehicle">
+                Vehicle / Requirement
+              </label>
+
+              <input
+                id="vehicle"
+                type="text"
+                placeholder="Vehicle / patient / freezer requirement"
+              >
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 05: ADDITIONAL DETAILS -->
+        <div class="form-group-block">
+          <div class="form-group-header">
+            <span class="group-num">05</span>
+            <span class="group-title">Additional Notes</span>
+          </div>
+
+          <div class="form-grid">
+
+            <!-- DETAILS -->
+            <div class="field full">
+              <label for="details">
+                Additional Details
+              </label>
+
+              <textarea
+                id="details"
+                placeholder="Add any important details..."
+              ></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SUBMIT ACTIONS -->
+        <div class="form-actions-wrap">
+          <button
+            type="submit"
+            class="btn btn-primary form-submit"
+          >
+            SEND ENQUIRY ON WHATSAPP →
+          </button>
+
+          <div class="form-note">
+            WhatsApp will open with your enquiry pre-filled.
+          </div>
         </div>
 
       </form>
@@ -2811,9 +4600,10 @@ footer{
       <div class="cta-bg">
 
         <img
-          src="https://storage.colortasarim.com/images/b416b754-fe7c-41f1-bd66-8fccb3aa7dec.png"
-          alt="Roadside recovery service"
+          src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1600&q=80"
+          alt="Emergency response fleet under standby"
           loading="lazy"
+          decoding="async"
         >
 
       </div>
@@ -2866,6 +4656,109 @@ footer{
 
 
 <!-- =======================================================
+     EMBEDDED INTERACTIVE LEAFLET MAP MODAL
+======================================================= -->
+
+<div id="mapModalBackdrop" class="map-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+
+  <div class="map-modal-dialog">
+
+    <div class="map-modal-header">
+
+      <div class="map-modal-title" id="mapModalTitle">
+        Choose Location on Map
+      </div>
+
+      <div class="map-search-wrap">
+        <input
+          type="text"
+          id="mapSearchInput"
+          class="map-search-input"
+          placeholder="Search landmark, hospital, city or address..."
+          autocomplete="off"
+        >
+        <div id="mapSearchResults" class="map-search-results"></div>
+      </div>
+
+      <button
+        type="button"
+        class="map-modal-close"
+        id="closeMapModalBtn"
+        aria-label="Close interactive map modal"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div class="map-canvas-container">
+
+      <div id="mapPickerView"></div>
+
+      <div class="map-floating-bar">
+        <button
+          type="button"
+          class="map-locate-btn"
+          id="mapLocateBtn"
+          title="Use your device GPS location"
+        >
+          <span>🎯 Use My Current Location</span>
+        </button>
+      </div>
+
+      <div class="map-hint-banner">
+        <span>📍 Tap or drag marker anywhere on map to pinpoint exact point</span>
+        <span id="mapAccuracyBadge" style="display:none; color:#10b981; font-weight:700;"></span>
+      </div>
+
+    </div>
+
+    <div class="map-modal-footer">
+
+      <div class="map-selection-meta">
+
+        <div class="map-coords-pill">
+          <span>COORDINATES:</span>
+          <strong id="modalCoordsDisplay">13.08270, 80.27070</strong>
+        </div>
+
+        <div class="map-resolved-address-box">
+          <span id="modalAddressDisplay">Resolving address...</span>
+          <span id="modalGeocodeSpinner" style="display:none; color:#ff2e4d; font-size:11px;">🔄 Loading...</span>
+        </div>
+
+      </div>
+
+      <div class="map-modal-actions">
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="cancelMapModalBtn"
+          style="min-height:44px; padding:0 20px; font-size:11px;"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="confirmFromModalBtn"
+          style="min-height:44px; padding:0 24px; font-size:11px;"
+        >
+          Confirm Location
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =======================================================
      FOOTER
 ======================================================= -->
 
@@ -2888,7 +4781,7 @@ footer{
 
       </div>
 
-      <div class="footer-links">
+      <div class="footer-links" aria-label="Footer Navigation">
 
         <a href="#home">HOME</a>
         <a href="#services">SERVICES</a>
@@ -2910,17 +4803,17 @@ footer{
 
 
 <!-- =======================================================
-     FLOATING BUTTONS
+     FLOATING BUTTONS (QUICK ACTIONS)
 ======================================================= -->
 
-<div class="floating">
+<div class="floating" aria-label="Emergency Contact Floating Actions">
 
   <a
     class="float-btn float-wa"
     href="https://wa.me/919489869164?text=Hello%20IYARKAI%20SERVICE%2C%20I%20need%20service."
     target="_blank"
     rel="noopener"
-    aria-label="WhatsApp"
+    aria-label="Chat on WhatsApp"
   >
     ◉
   </a>
@@ -2928,7 +4821,7 @@ footer{
   <a
     class="float-btn float-call"
     href="tel:+919345658295"
-    aria-label="Call"
+    aria-label="Call Emergency Service 9345658295"
   >
     ☎
   </a>
@@ -2937,300 +4830,1052 @@ footer{
 
 
 <!-- =======================================================
-     JAVASCRIPT
+     JAVASCRIPT — PERFORMANCE, LEAFLET MAP & FORM DISPATCH
 ======================================================= -->
 
 <script>
+(() => {
+  'use strict';
 
-/* =========================================================
-   YEAR
-========================================================= */
+  /* =========================================================
+     YEAR
+  ========================================================= */
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+  /* =========================================================
+     HAMBURGER SIDEBAR TOGGLE & ACCESSIBILITY
+  ========================================================= */
+  const navHamburger = document.getElementById("navHamburger");
+  const mobileSidebar = document.getElementById("mobileSidebar");
+  const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+  const sidebarClose = document.getElementById("sidebarClose");
+  const sidebarLinks = document.querySelectorAll(".sidebar-link");
 
+  function openSidebar() {
+    if (!mobileSidebar || !sidebarBackdrop) return;
+    mobileSidebar.classList.add("open");
+    sidebarBackdrop.classList.add("open");
+    if (navHamburger) navHamburger.setAttribute("aria-expanded", "true");
+    mobileSidebar.setAttribute("aria-hidden", "false");
+    sidebarBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (sidebarClose) sidebarClose.focus();
+  }
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+  function closeSidebar() {
+    if (!mobileSidebar || !sidebarBackdrop) return;
+    mobileSidebar.classList.remove("open");
+    sidebarBackdrop.classList.remove("open");
+    if (navHamburger) {
+      navHamburger.setAttribute("aria-expanded", "false");
+      navHamburger.focus();
+    }
+    mobileSidebar.setAttribute("aria-hidden", "true");
+    sidebarBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
 
-const revealElements =
-  document.querySelectorAll(".reveal");
+  if (navHamburger) {
+    navHamburger.addEventListener("click", () => {
+      const isExpanded = navHamburger.getAttribute("aria-expanded") === "true";
+      if (isExpanded) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+  }
 
-const revealObserver =
-  new IntersectionObserver(
-    (entries) => {
+  if (sidebarClose) {
+    sidebarClose.addEventListener("click", closeSidebar);
+  }
 
-      entries.forEach((entry) => {
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener("click", closeSidebar);
+  }
 
-        if(entry.isIntersecting){
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if (mobileSidebar && mobileSidebar.classList.contains("open")) {
+        closeSidebar();
+      }
+      if (mapModalBackdrop && mapModalBackdrop.classList.contains("active")) {
+        closeMapModal();
+      }
+    }
+  });
 
+  sidebarLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      closeSidebar();
+    });
+  });
+
+  /* =========================================================
+     SCROLL PROGRESS & TOPBAR STATE
+  ========================================================= */
+  const scrollProgressBar = document.getElementById("scrollProgress");
+  const topbar = document.querySelector(".topbar");
+  const heroImage = document.querySelector(".hero-media img");
+
+  let isTicking = false;
+
+  function onScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    
+    if (scrollProgressBar && docHeight > 0) {
+      const scrollPercent = Math.min(Math.max((scrollY / docHeight) * 100, 0), 100);
+      scrollProgressBar.style.width = scrollPercent + "%";
+    }
+
+    if (topbar) {
+      if (scrollY > 50) {
+        topbar.classList.add("scrolled");
+      } else {
+        topbar.classList.remove("scrolled");
+      }
+    }
+
+    if (heroImage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth >= 768) {
+      if (scrollY <= window.innerHeight * 1.2) {
+        const translateY = scrollY * 0.22;
+        const scale = Math.max(1.06 - (scrollY / window.innerHeight) * 0.08, 1.0);
+        heroImage.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+      }
+    } else if (heroImage && (window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      heroImage.style.transform = "none";
+    }
+
+    isTicking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(onScroll);
+      isTicking = true;
+    }
+  }, { passive: true });
+
+  onScroll();
+
+  /* =========================================================
+     ACTIVE NAVIGATION HIGHLIGHTING VIA INTERSECTION OBSERVER
+  ========================================================= */
+  const allNavTrackedLinks = document.querySelectorAll(".nav-links a, .sidebar-link");
+  const trackedSections = document.querySelectorAll("section[id]");
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        allNavTrackedLinks.forEach(link => {
+          const href = link.getAttribute("href");
+          if (href === `#${id}`) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: "-25% 0px -65% 0px",
+    threshold: 0
+  });
+
+  trackedSections.forEach(sec => navObserver.observe(sec));
+
+  /* =========================================================
+     SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+  ========================================================= */
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-
           revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px"
+    });
 
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add("visible"));
+  }
+
+  /* =========================================================
+     SMOOTH INTERNAL NAVIGATION WITH HEADER OFFSET
+  ========================================================= */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function(event) {
+      const targetId = this.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        event.preventDefault();
+        const topbarHeight = topbar ? topbar.offsetHeight : 76;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - topbarHeight + 10;
+
+        window.scrollTo({
+          top: targetPos,
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? "auto" : "smooth"
+        });
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+
+  /* =========================================================
+     EMBEDDED INTERACTIVE LEAFLET MAP STATE & CONTROLLER
+  ========================================================= */
+  const mapModalBackdrop = document.getElementById("mapModalBackdrop");
+  const mapModalTitle = document.getElementById("mapModalTitle");
+  const closeMapModalBtn = document.getElementById("closeMapModalBtn");
+  const cancelMapModalBtn = document.getElementById("cancelMapModalBtn");
+  const confirmFromModalBtn = document.getElementById("confirmFromModalBtn");
+
+  const openPickupMapBtn = document.getElementById("openPickupMapBtn");
+  const openDestMapBtn = document.getElementById("openDestMapBtn");
+
+  const pickupInput = document.getElementById("pickup");
+  const confirmPickupBtn = document.getElementById("confirmPickupBtn");
+  const pickupStatusBar = document.getElementById("pickupStatusBar");
+
+  const destInput = document.getElementById("destination");
+  const confirmDestBtn = document.getElementById("confirmDestBtn");
+  const destStatusBar = document.getElementById("destStatusBar");
+
+  const routePreviewWrap = document.getElementById("routePreviewWrap");
+  const routePreviewBadge = document.getElementById("routePreviewBadge");
+
+  const mapSearchInput = document.getElementById("mapSearchInput");
+  const mapSearchResults = document.getElementById("mapSearchResults");
+  const mapLocateBtn = document.getElementById("mapLocateBtn");
+  const mapAccuracyBadge = document.getElementById("mapAccuracyBadge");
+  const modalCoordsDisplay = document.getElementById("modalCoordsDisplay");
+  const modalAddressDisplay = document.getElementById("modalAddressDisplay");
+  const modalGeocodeSpinner = document.getElementById("modalGeocodeSpinner");
+
+  // State store for Pickup & Destination
+  const locationState = {
+    pickup: {
+      lat: null,
+      lng: null,
+      address: "",
+      accuracy: null,
+      isConfirmed: false
+    },
+    dest: {
+      lat: null,
+      lng: null,
+      address: "",
+      accuracy: null,
+      isConfirmed: false
+    }
+  };
+
+  // Active modal session state
+  let currentPickerMode = "pickup"; // "pickup" or "dest"
+  let currentModalLat = 13.0827; // Default Chennai
+  let currentModalLng = 80.2707;
+  let currentModalAddress = "";
+  let currentModalAccuracy = null;
+  let geocodeDebounceTimer = null;
+  let searchDebounceTimer = null;
+
+  // Leaflet map instances
+  let leafletMap = null;
+  let mapMarker = null;
+
+  // Custom Emergency Red Pin Icon
+  const emergencyIcon = L.divIcon({
+    className: 'custom-map-marker',
+    html: `
+      <div class="marker-pin-wrap">
+        <div class="marker-pin">
+          <div class="marker-pin-dot"></div>
+        </div>
+      </div>
+    `,
+    iconSize: [32, 42],
+    iconAnchor: [16, 42]
+  });
+
+  function initLeafletMap() {
+    if (leafletMap) return;
+
+    // Center on Tamil Nadu / Chennai by default
+    leafletMap = L.map('mapPickerView', {
+      center: [currentModalLat, currentModalLng],
+      zoom: 13,
+      zoomControl: true
+    });
+
+    // High quality OpenStreetMap tiles
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+    }).addTo(leafletMap);
+
+    // Draggable emergency marker
+    mapMarker = L.marker([currentModalLat, currentModalLng], {
+      icon: emergencyIcon,
+      draggable: true
+    }).addTo(leafletMap);
+
+    // Click/tap on map to relocate marker
+    leafletMap.on('click', (e) => {
+      setModalMarkerPosition(e.latlng.lat, e.latlng.lng, true);
+    });
+
+    // Marker drag events
+    mapMarker.on('drag', () => {
+      const pos = mapMarker.getLatLng();
+      modalCoordsDisplay.textContent = `${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)}`;
+    });
+
+    mapMarker.on('dragend', () => {
+      const pos = mapMarker.getLatLng();
+      setModalMarkerPosition(pos.lat, pos.lng, true);
+    });
+  }
+
+  function setModalMarkerPosition(lat, lng, shouldReverseGeocode = true, accuracy = null) {
+    currentModalLat = lat;
+    currentModalLng = lng;
+    currentModalAccuracy = accuracy;
+
+    if (mapMarker) {
+      mapMarker.setLatLng([lat, lng]);
+    }
+    if (leafletMap) {
+      leafletMap.panTo([lat, lng]);
+    }
+
+    modalCoordsDisplay.textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+
+    if (accuracy && mapAccuracyBadge) {
+      mapAccuracyBadge.textContent = `GPS Accuracy: ±${Math.round(accuracy)}m`;
+      mapAccuracyBadge.style.display = "inline";
+    } else if (mapAccuracyBadge) {
+      mapAccuracyBadge.style.display = "none";
+    }
+
+    if (shouldReverseGeocode) {
+      debounceReverseGeocode(lat, lng);
+    }
+  }
+
+  function debounceReverseGeocode(lat, lng) {
+    clearTimeout(geocodeDebounceTimer);
+    if (modalAddressDisplay) {
+      modalAddressDisplay.textContent = "Resolving address from map coordinates...";
+    }
+    if (modalGeocodeSpinner) modalGeocodeSpinner.style.display = "inline";
+
+    geocodeDebounceTimer = setTimeout(async () => {
+      try {
+        let addressText = "";
+        // Try local proxy route first
+        const proxyResp = await fetch(`/api/reverse-geocode?lat=${lat}&lon=${lng}`).catch(() => null);
+        if (proxyResp && proxyResp.ok) {
+          const data = await proxyResp.json();
+          addressText = data.display_name || "";
+        } else {
+          // Direct fallback
+          const directResp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18`).catch(() => null);
+          if (directResp && directResp.ok) {
+            const data = await directResp.json();
+            addressText = data.display_name || "";
+          }
         }
 
-      });
-
-    },
-    {
-      threshold:.10,
-      rootMargin:"0px 0px -45px 0px"
-    }
-  );
-
-
-revealElements.forEach((element) => {
-  revealObserver.observe(element);
-});
-
-
-/* =========================================================
-   WHATSAPP ENQUIRY
-========================================================= */
-
-const form =
-  document.getElementById("enquiryForm");
-
-
-form.addEventListener("submit", function(event){
-
-  event.preventDefault();
-
-
-  const service =
-    document.getElementById("service").value.trim();
-
-  const whatsapp =
-    document.getElementById("whatsapp").value;
-
-  const name =
-    document.getElementById("name").value.trim();
-
-  const contact =
-    document.getElementById("contact").value.trim();
-
-  const pickup =
-    document.getElementById("pickup").value.trim();
-
-  const destination =
-    document.getElementById("destination").value.trim();
-
-  const datetime =
-    document.getElementById("datetime").value;
-
-  const vehicle =
-    document.getElementById("vehicle").value.trim();
-
-  const details =
-    document.getElementById("details").value.trim();
-
-
-  if(!service || !name || !contact || !pickup){
-
-    alert(
-      "Please fill Service, Name, Contact Number and Pickup Location."
-    );
-
-    return;
-
+        if (addressText) {
+          currentModalAddress = addressText;
+          modalAddressDisplay.textContent = addressText;
+        } else {
+          currentModalAddress = `Coordinates: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+          modalAddressDisplay.textContent = `${currentModalAddress} (Address lookup unavailable - coordinates saved)`;
+        }
+      } catch (e) {
+        currentModalAddress = `Coordinates: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+        modalAddressDisplay.textContent = `${currentModalAddress} (Address lookup timed out - coordinates saved)`;
+      } finally {
+        if (modalGeocodeSpinner) modalGeocodeSpinner.style.display = "none";
+      }
+    }, 350);
   }
 
+  function openMapModal(mode) {
+    currentPickerMode = mode; // "pickup" or "dest"
 
-  let formattedDateTime = "Not specified";
+    if (mode === "pickup") {
+      mapModalTitle.textContent = "Select Pickup Location on Map";
+      confirmFromModalBtn.textContent = "Confirm Pickup Location";
+      if (locationState.pickup.lat && locationState.pickup.lng) {
+        currentModalLat = locationState.pickup.lat;
+        currentModalLng = locationState.pickup.lng;
+        currentModalAddress = locationState.pickup.address;
+      }
+    } else {
+      mapModalTitle.textContent = "Select Destination Location on Map";
+      confirmFromModalBtn.textContent = "Confirm Destination Location";
+      if (locationState.dest.lat && locationState.dest.lng) {
+        currentModalLat = locationState.dest.lat;
+        currentModalLng = locationState.dest.lng;
+        currentModalAddress = locationState.dest.address;
+      } else if (locationState.pickup.lat && locationState.pickup.lng) {
+        // Start near pickup if available
+        currentModalLat = locationState.pickup.lat;
+        currentModalLng = locationState.pickup.lng;
+      }
+    }
 
+    if (mapSearchInput) mapSearchInput.value = "";
+    if (mapSearchResults) {
+      mapSearchResults.innerHTML = "";
+      mapSearchResults.style.display = "none";
+    }
 
-  if(datetime){
+    mapModalBackdrop.classList.add("active");
+    mapModalBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
 
-    const date =
-      new Date(datetime);
+    // Initialize or resize Leaflet
+    initLeafletMap();
 
-    if(!Number.isNaN(date.getTime())){
+    setTimeout(() => {
+      if (leafletMap) {
+        leafletMap.invalidateSize();
+        leafletMap.setView([currentModalLat, currentModalLng], 14);
+        setModalMarkerPosition(currentModalLat, currentModalLng, !currentModalAddress);
+        if (currentModalAddress && modalAddressDisplay) {
+          modalAddressDisplay.textContent = currentModalAddress;
+        }
+      }
+    }, 150);
+  }
 
-      formattedDateTime =
-        date.toLocaleString(
-          "en-IN",
-          {
-            dateStyle:"medium",
-            timeStyle:"short"
+  function closeMapModal() {
+    mapModalBackdrop.classList.remove("active");
+    mapModalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Handle responsive map resizing on window resize and orientation change
+  window.addEventListener("resize", () => {
+    if (leafletMap && mapModalBackdrop && mapModalBackdrop.classList.contains("active")) {
+      leafletMap.invalidateSize();
+    }
+  }, { passive: true });
+
+  window.addEventListener("orientationchange", () => {
+    if (leafletMap && mapModalBackdrop && mapModalBackdrop.classList.contains("active")) {
+      setTimeout(() => {
+        leafletMap.invalidateSize();
+      }, 200);
+    }
+  }, { passive: true });
+
+  // Use My Current Location via Geolocation API
+  if (mapLocateBtn) {
+    mapLocateBtn.addEventListener("click", () => {
+      if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser. Please tap directly on the map.");
+        return;
+      }
+
+      mapLocateBtn.innerHTML = `<span>⏳ Locating GPS...</span>`;
+      mapLocateBtn.disabled = true;
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          mapLocateBtn.innerHTML = `<span>🎯 Use My Current Location</span>`;
+          mapLocateBtn.disabled = false;
+
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const accuracy = position.coords.accuracy;
+
+          if (leafletMap) {
+            leafletMap.setView([lat, lng], 16);
           }
-        );
+          setModalMarkerPosition(lat, lng, true, accuracy);
+        },
+        (error) => {
+          mapLocateBtn.innerHTML = `<span>🎯 Use My Current Location</span>`;
+          mapLocateBtn.disabled = false;
 
-    }
+          let msg = "Could not retrieve GPS location.";
+          if (error.code === error.PERMISSION_DENIED) {
+            msg = "Location permission was denied. You can still tap anywhere on the map to choose your point.";
+          } else if (error.code === error.POSITION_UNAVAILABLE) {
+            msg = "GPS signal currently unavailable. Please tap or search on the map.";
+          } else if (error.code === error.TIMEOUT) {
+            msg = "GPS request timed out. Please tap or search on the map.";
+          }
 
+          if (modalAddressDisplay) {
+            modalAddressDisplay.textContent = msg;
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    });
   }
 
+  // Address search in modal
+  if (mapSearchInput && mapSearchResults) {
+    mapSearchInput.addEventListener("input", () => {
+      const query = mapSearchInput.value.trim();
+      clearTimeout(searchDebounceTimer);
 
-  const message =
+      if (query.length < 3) {
+        mapSearchResults.innerHTML = "";
+        mapSearchResults.style.display = "none";
+        return;
+      }
 
+      searchDebounceTimer = setTimeout(async () => {
+        try {
+          let items = [];
+          // Try local proxy
+          const proxyResp = await fetch(`/api/search-address?q=${encodeURIComponent(query)}`).catch(() => null);
+          if (proxyResp && proxyResp.ok) {
+            items = await proxyResp.json();
+          } else {
+            // Direct fallback
+            const directResp = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5`).catch(() => null);
+            if (directResp && directResp.ok) {
+              items = await directResp.json();
+            }
+          }
+
+          if (Array.isArray(items) && items.length > 0) {
+            mapSearchResults.innerHTML = items.map(item => `
+              <div class="map-search-item" data-lat="${item.lat}" data-lng="${item.lon}" data-name="${escapeHtml(item.display_name)}">
+                📍 ${escapeHtml(item.display_name)}
+              </div>
+            `).join("");
+            mapSearchResults.style.display = "block";
+
+            // Click search result
+            mapSearchResults.querySelectorAll(".map-search-item").forEach(el => {
+              el.addEventListener("click", () => {
+                const lat = parseFloat(el.getAttribute("data-lat"));
+                const lng = parseFloat(el.getAttribute("data-lng"));
+                const name = el.getAttribute("data-name");
+
+                currentModalAddress = name;
+                if (modalAddressDisplay) modalAddressDisplay.textContent = name;
+                mapSearchInput.value = "";
+                mapSearchResults.style.display = "none";
+
+                if (leafletMap) {
+                  leafletMap.setView([lat, lng], 16);
+                }
+                setModalMarkerPosition(lat, lng, false);
+              });
+            });
+          } else {
+            mapSearchResults.innerHTML = `<div style="padding:10px 14px; font-size:12px; color:#959fae;">No locations found. Tap directly on the map.</div>`;
+            mapSearchResults.style.display = "block";
+          }
+        } catch (e) {
+          mapSearchResults.style.display = "none";
+        }
+      }, 300);
+    });
+  }
+
+  // Confirm selection from inside modal
+  if (confirmFromModalBtn) {
+    confirmFromModalBtn.addEventListener("click", () => {
+      const lat = currentModalLat;
+      const lng = currentModalLng;
+      const address = (currentModalAddress || `${lat.toFixed(5)}, ${lng.toFixed(5)}`).trim();
+
+      if (currentPickerMode === "pickup") {
+        locationState.pickup = {
+          lat: lat,
+          lng: lng,
+          address: address,
+          accuracy: currentModalAccuracy,
+          isConfirmed: true
+        };
+
+        if (pickupInput) pickupInput.value = address;
+        if (confirmPickupBtn) {
+          confirmPickupBtn.classList.add("confirmed");
+          confirmPickupBtn.textContent = "✓ Confirmed";
+        }
+
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+        if (pickupStatusBar) {
+          pickupStatusBar.innerHTML = `
+            <div class="status-confirmed">
+              <span>✓ Confirmed: <strong>${escapeHtml(address)}</strong> (GPS: ${lat.toFixed(5)}, ${lng.toFixed(5)})</span>
+              <a href="${mapUrl}" target="_blank" rel="noopener noreferrer">View Map ↗</a>
+            </div>
+          `;
+        }
+      } else {
+        locationState.dest = {
+          lat: lat,
+          lng: lng,
+          address: address,
+          accuracy: currentModalAccuracy,
+          isConfirmed: true
+        };
+
+        if (destInput) destInput.value = address;
+        if (confirmDestBtn) {
+          confirmDestBtn.classList.add("confirmed");
+          confirmDestBtn.textContent = "✓ Confirmed";
+        }
+
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+        if (destStatusBar) {
+          destStatusBar.innerHTML = `
+            <div class="status-confirmed">
+              <span>✓ Confirmed: <strong>${escapeHtml(address)}</strong> (GPS: ${lat.toFixed(5)}, ${lng.toFixed(5)})</span>
+              <a href="${mapUrl}" target="_blank" rel="noopener noreferrer">View Map ↗</a>
+            </div>
+          `;
+        }
+      }
+
+      updateRoutePreview();
+      closeMapModal();
+    });
+  }
+
+  if (openPickupMapBtn) {
+    openPickupMapBtn.addEventListener("click", () => openMapModal("pickup"));
+  }
+
+  if (openDestMapBtn) {
+    openDestMapBtn.addEventListener("click", () => openMapModal("dest"));
+  }
+
+  if (closeMapModalBtn) {
+    closeMapModalBtn.addEventListener("click", closeMapModal);
+  }
+
+  if (cancelMapModalBtn) {
+    cancelMapModalBtn.addEventListener("click", closeMapModal);
+  }
+
+  // Manual Confirmation from Input Fields (Fallback / Type-in)
+  function confirmPickupManual() {
+    if (!pickupInput) return;
+    const address = pickupInput.value.trim();
+    if (!address) {
+      if (pickupStatusBar) {
+        pickupStatusBar.innerHTML = `<div class="status-unconfirmed" style="color:#ff6b81;"><span>Please enter a pickup address or tap "Choose Pickup on Map".</span></div>`;
+      }
+      pickupInput.focus();
+      return;
+    }
+
+    // If map coords were already selected and match text, maintain them
+    if (!locationState.pickup.lat || locationState.pickup.address !== address) {
+      locationState.pickup = {
+        lat: locationState.pickup.lat || 13.0827,
+        lng: locationState.pickup.lng || 80.2707,
+        address: address,
+        accuracy: null,
+        isConfirmed: true
+      };
+    } else {
+      locationState.pickup.isConfirmed = true;
+    }
+
+    if (confirmPickupBtn) {
+      confirmPickupBtn.classList.add("confirmed");
+      confirmPickupBtn.textContent = "✓ Confirmed";
+    }
+
+    const mapQuery = locationState.pickup.lat ? `${locationState.pickup.lat},${locationState.pickup.lng}` : encodeURIComponent(address);
+    if (pickupStatusBar) {
+      pickupStatusBar.innerHTML = `
+        <div class="status-confirmed">
+          <span>✓ Confirmed: <strong>${escapeHtml(address)}</strong></span>
+          <a href="https://www.google.com/maps/search/?api=1&query=${mapQuery}" target="_blank" rel="noopener noreferrer">View on Map ↗</a>
+        </div>
+      `;
+    }
+
+    updateRoutePreview();
+  }
+
+  function confirmDestManual() {
+    if (!destInput) return;
+    const address = destInput.value.trim();
+    if (!address) {
+      if (destStatusBar) {
+        destStatusBar.innerHTML = `<div class="status-unconfirmed" style="color:#ff6b81;"><span>Please enter destination or tap "Choose Destination on Map".</span></div>`;
+      }
+      destInput.focus();
+      return;
+    }
+
+    if (!locationState.dest.lat || locationState.dest.address !== address) {
+      locationState.dest = {
+        lat: locationState.dest.lat || 13.0827,
+        lng: locationState.dest.lng || 80.2707,
+        address: address,
+        accuracy: null,
+        isConfirmed: true
+      };
+    } else {
+      locationState.dest.isConfirmed = true;
+    }
+
+    if (confirmDestBtn) {
+      confirmDestBtn.classList.add("confirmed");
+      confirmDestBtn.textContent = "✓ Confirmed";
+    }
+
+    const mapQuery = locationState.dest.lat ? `${locationState.dest.lat},${locationState.dest.lng}` : encodeURIComponent(address);
+    if (destStatusBar) {
+      destStatusBar.innerHTML = `
+        <div class="status-confirmed">
+          <span>✓ Confirmed: <strong>${escapeHtml(address)}</strong></span>
+          <a href="https://www.google.com/maps/search/?api=1&query=${mapQuery}" target="_blank" rel="noopener noreferrer">View on Map ↗</a>
+        </div>
+      `;
+    }
+
+    updateRoutePreview();
+  }
+
+  // Detect manual edits to inputs after confirmation
+  if (pickupInput) {
+    pickupInput.addEventListener("input", () => {
+      if (locationState.pickup.isConfirmed && pickupInput.value.trim() !== locationState.pickup.address) {
+        locationState.pickup.isConfirmed = false;
+        if (confirmPickupBtn) {
+          confirmPickupBtn.classList.remove("confirmed");
+          confirmPickupBtn.textContent = "Confirm Location";
+        }
+        if (pickupStatusBar) {
+          pickupStatusBar.innerHTML = `<div class="status-unconfirmed"><span>⚠️ Location text modified. Re-confirm or select on map.</span></div>`;
+        }
+        updateRoutePreview();
+      } else if (!locationState.pickup.isConfirmed && !pickupInput.value.trim()) {
+        if (pickupStatusBar) pickupStatusBar.innerHTML = "";
+      }
+    });
+
+    pickupInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        confirmPickupManual();
+      }
+    });
+  }
+
+  if (destInput) {
+    destInput.addEventListener("input", () => {
+      if (locationState.dest.isConfirmed && destInput.value.trim() !== locationState.dest.address) {
+        locationState.dest.isConfirmed = false;
+        if (confirmDestBtn) {
+          confirmDestBtn.classList.remove("confirmed");
+          confirmDestBtn.textContent = "Confirm Location";
+        }
+        if (destStatusBar) {
+          destStatusBar.innerHTML = `<div class="status-unconfirmed"><span>⚠️ Location text modified. Re-confirm or select on map.</span></div>`;
+        }
+        updateRoutePreview();
+      } else if (!locationState.dest.isConfirmed && !destInput.value.trim()) {
+        if (destStatusBar) destStatusBar.innerHTML = "";
+        updateRoutePreview();
+      }
+    });
+
+    destInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        confirmDestManual();
+      }
+    });
+  }
+
+  if (confirmPickupBtn) confirmPickupBtn.addEventListener("click", confirmPickupManual);
+  if (confirmDestBtn) confirmDestBtn.addEventListener("click", confirmDestManual);
+
+  function updateRoutePreview() {
+    if (!routePreviewWrap || !routePreviewBadge) return;
+
+    if (locationState.pickup.isConfirmed && locationState.dest.isConfirmed) {
+      const p = locationState.pickup;
+      const d = locationState.dest;
+      const originQuery = p.lat ? `${p.lat},${p.lng}` : encodeURIComponent(p.address);
+      const destQuery = d.lat ? `${d.lat},${d.lng}` : encodeURIComponent(d.address);
+
+      const routeUrl = `https://www.google.com/maps/dir/?api=1&origin=${originQuery}&destination=${destQuery}`;
+
+      routePreviewBadge.innerHTML = `
+        <div>
+          <strong>🛣️ Route Ready:</strong> ${escapeHtml(p.address)} → ${escapeHtml(d.address)}
+        </div>
+        <a href="${routeUrl}" target="_blank" rel="noopener noreferrer">
+          Preview Google Maps Directions ↗
+        </a>
+      `;
+      routePreviewWrap.style.display = "block";
+    } else {
+      routePreviewWrap.style.display = "none";
+      routePreviewBadge.innerHTML = "";
+    }
+  }
+
+  function escapeHtml(str) {
+    return (str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  /* =========================================================
+     LOCATION FIELD VISIBILITY & EXEMPTION FOR FREEZER SERVICES
+  ========================================================= */
+  const serviceSelect = document.getElementById("service");
+  const pickupFieldGroup = document.getElementById("pickupFieldGroup");
+  const destFieldGroup = document.getElementById("destFieldGroup");
+  const locationSectionGroup = document.getElementById("locationSectionGroup");
+
+  function isLocationFreeService(svc) {
+    if (!svc) return false;
+    const val = svc.trim().toLowerCase();
+    return val === "normal freezer box" || val === "premium freezer box" || val === "freezer box";
+  }
+
+  function updateLocationFieldsForService() {
+    const currentService = serviceSelect ? serviceSelect.value : "";
+    const isFreezer = isLocationFreeService(currentService);
+
+    if (locationSectionGroup) {
+      locationSectionGroup.style.display = isFreezer ? "none" : "";
+    }
+    if (isFreezer) {
+      if (pickupFieldGroup) pickupFieldGroup.style.display = "none";
+      if (destFieldGroup) destFieldGroup.style.display = "none";
+      if (routePreviewWrap) routePreviewWrap.style.display = "none";
+      if (pickupInput) {
+        pickupInput.required = false;
+        pickupInput.removeAttribute("required");
+      }
+      if (pickupStatusBar) pickupStatusBar.innerHTML = "";
+      if (destStatusBar) destStatusBar.innerHTML = "";
+    } else {
+      if (pickupFieldGroup) pickupFieldGroup.style.display = "";
+      if (destFieldGroup) destFieldGroup.style.display = "";
+      if (pickupInput) {
+        pickupInput.required = true;
+        pickupInput.setAttribute("required", "required");
+      }
+      updateRoutePreview();
+    }
+  }
+
+  if (serviceSelect) {
+    serviceSelect.addEventListener("change", updateLocationFieldsForService);
+    // Initialize on page load
+    updateLocationFieldsForService();
+  }
+
+  /* =========================================================
+     WHATSAPP ENQUIRY FORM DISPATCH
+  ========================================================= */
+  const form = document.getElementById("enquiryForm");
+  const statusMsg = document.getElementById("formStatusMsg");
+
+  if (form) {
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (statusMsg) {
+        statusMsg.style.display = "none";
+        statusMsg.textContent = "";
+      }
+
+      const service = (document.getElementById("service")?.value || "").trim();
+      const whatsapp = document.getElementById("whatsapp")?.value || "919489869164";
+      const name = (document.getElementById("name")?.value || "").trim();
+      const contact = (document.getElementById("contact")?.value || "").trim();
+      const rawPickup = (document.getElementById("pickup")?.value || "").trim();
+      const rawDest = (document.getElementById("destination")?.value || "").trim();
+      const datetime = document.getElementById("datetime")?.value || "";
+      const vehicle = (document.getElementById("vehicle")?.value || "").trim();
+      const details = (document.getElementById("details")?.value || "").trim();
+
+      const isFreezer = isLocationFreeService(service);
+
+      // Validation logic: Freezer services do NOT require location selection
+      if (isFreezer) {
+        if (!service || !name || !contact) {
+          if (statusMsg) {
+            statusMsg.className = "form-status-msg error";
+            statusMsg.textContent = "Please fill Service, Name and Contact Number.";
+            statusMsg.style.display = "block";
+            statusMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+          return;
+        }
+      } else {
+        // Location-based services: require Service, Name, Contact and Pickup Location
+        if (!service || !name || !contact || !rawPickup) {
+          if (statusMsg) {
+            statusMsg.className = "form-status-msg error";
+            statusMsg.textContent = "Please fill Service, Name, Contact Number and Pickup Location.";
+            statusMsg.style.display = "block";
+            statusMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+          return;
+        }
+
+        // Pickup Confirmation Check
+        if (!locationState.pickup.isConfirmed || rawPickup !== locationState.pickup.address) {
+          if (statusMsg) {
+            statusMsg.className = "form-status-msg error";
+            statusMsg.textContent = "Please confirm your Pickup Location using 'Choose Pickup on Map' or 'Confirm Location' before submitting.";
+            statusMsg.style.display = "block";
+            statusMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+          if (pickupInput) pickupInput.focus();
+          return;
+        }
+
+        // Destination Confirmation Check (if destination was filled)
+        if (rawDest && (!locationState.dest.isConfirmed || rawDest !== locationState.dest.address)) {
+          if (statusMsg) {
+            statusMsg.className = "form-status-msg error";
+            statusMsg.textContent = "Please confirm your Destination Location using 'Choose Destination on Map' or 'Confirm Location', or clear the destination field.";
+            statusMsg.style.display = "block";
+            statusMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+          if (destInput) destInput.focus();
+          return;
+        }
+      }
+
+      // Format Date/Time
+      let formattedDateTime = "Not specified";
+      if (datetime) {
+        const date = new Date(datetime);
+        if (!Number.isNaN(date.getTime())) {
+          formattedDateTime = date.toLocaleString("en-IN", {
+            dateStyle: "medium",
+            timeStyle: "short"
+          });
+        }
+      }
+
+      let message = "";
+
+      if (isFreezer) {
+        // Freezer enquiries: direct submission with service and requirement details only
+        message =
 `IYARKAI SERVICE — NEW ENQUIRY
 
 Service: ${service}
-Name: ${name}
-Contact: ${contact}
-Pickup Location: ${pickup}
-Destination: ${destination || "Not specified"}
+Customer Name: ${name}
+Contact Number: ${contact}
+
 Date / Time: ${formattedDateTime}
 Vehicle / Requirement: ${vehicle || "Not specified"}
 Additional Details: ${details || "None"}
 
 Sent from IYARKAI SERVICE website.`;
+      } else {
+        // Location-based enquiries: include confirmed locations, exact coordinates, and map links
+        const p = locationState.pickup;
+        const pickupQuery = p.lat ? `${p.lat},${p.lng}` : encodeURIComponent(p.address);
+        const pickupMapLink = `https://www.google.com/maps/search/?api=1&query=${pickupQuery}`;
+        const pickupCoordsText = p.lat ? `\nPickup Coordinates: ${p.lat}, ${p.lng}` : '';
 
+        let destinationSection = "Destination: Not specified\n";
+        let routeSection = "";
 
-  const url =
-    "https://wa.me/" +
-    whatsapp +
-    "?text=" +
-    encodeURIComponent(message);
+        if (rawDest && locationState.dest.isConfirmed) {
+          const d = locationState.dest;
+          const destQuery = d.lat ? `${d.lat},${d.lng}` : encodeURIComponent(d.address);
+          const destMapLink = `https://www.google.com/maps/search/?api=1&query=${destQuery}`;
+          const destCoordsText = d.lat ? `\nDestination Coordinates: ${d.lat}, ${d.lng}` : '';
 
+          const originForDir = p.lat ? `${p.lat},${p.lng}` : encodeURIComponent(p.address);
+          const destForDir = d.lat ? `${d.lat},${d.lng}` : encodeURIComponent(d.address);
+          const routeDirectionsLink = `https://www.google.com/maps/dir/?api=1&origin=${originForDir}&destination=${destForDir}`;
 
-  window.open(
-    url,
-    "_blank",
-    "noopener"
-  );
+          destinationSection = `Destination Location: ${d.address}${destCoordsText}\nDestination Map: ${destMapLink}\n`;
+          routeSection = `Route Directions: ${routeDirectionsLink}\n`;
+        }
 
-});
+        message =
+`IYARKAI SERVICE — NEW ENQUIRY
 
+Service: ${service}
+Customer Name: ${name}
+Contact Number: ${contact}
 
-/* =========================================================
-   IMAGE PARALLAX
-   LIGHTWEIGHT — NO CONTINUOUS HEAVY ANIMATION
-========================================================= */
+Pickup Location: ${p.address}${pickupCoordsText}
+Pickup Map: ${pickupMapLink}
+${destinationSection}${routeSection}
+Date / Time: ${formattedDateTime}
+Vehicle / Requirement: ${vehicle || "Not specified"}
+Additional Details: ${details || "None"}
 
-let ticking = false;
-
-
-function updateParallax(){
-
-  const scrollY =
-    window.scrollY;
-
-  const heroImage =
-    document.querySelector(".hero-media img");
-
-
-  if(heroImage){
-
-    const offset =
-      Math.min(scrollY * .12, 70);
-
-    heroImage.style.transform =
-      `translateY(${offset}px) scale(1.02)`;
-
-  }
-
-
-  ticking = false;
-
-}
-
-
-window.addEventListener(
-  "scroll",
-  () => {
-
-    if(!ticking){
-
-      window.requestAnimationFrame(
-        updateParallax
-      );
-
-      ticking = true;
-
-    }
-
-  },
-  {
-    passive:true
-  }
-);
-
-
-/* =========================================================
-   SMOOTH INTERNAL LINKS
-========================================================= */
-
-document.querySelectorAll(
-  'a[href^="#"]'
-).forEach((link) => {
-
-  link.addEventListener(
-    "click",
-    function(event){
-
-      const targetId =
-        this.getAttribute("href");
-
-      if(
-        !targetId ||
-        targetId === "#"
-      ){
-        return;
+Sent from IYARKAI SERVICE website.`;
       }
 
+      const url = "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(message);
 
-      const target =
-        document.querySelector(targetId);
-
-
-      if(target){
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-          behavior:"smooth",
-          block:"start"
-        });
-
+      // Attempt open window, fallback gracefully
+      const win = window.open(url, "_blank", "noopener,noreferrer");
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = url;
       }
+    });
+  }
 
-    }
-  );
-
-});
-
-
-/* =========================================================
-   IMAGE ERROR FALLBACK
-   Keeps layout attractive if external image fails
-========================================================= */
-
-document.querySelectorAll("img").forEach((img) => {
-
-  img.addEventListener(
-    "error",
-    function(){
-
+  /* =========================================================
+     IMAGE ERROR FALLBACK
+  ========================================================= */
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("error", function() {
       this.style.display = "none";
-
-      const parent =
-        this.parentElement;
-
-      if(parent){
-
-        parent.style.background =
-          `
-          radial-gradient(
-            circle at 70% 30%,
-            rgba(255,48,79,.22),
-            transparent 35%
-          ),
-          linear-gradient(
-            135deg,
-            #171b22,
-            #050608
-          )
-          `;
-
+      const parent = this.parentElement;
+      if (parent) {
+        parent.style.background = `
+          radial-gradient(circle at 70% 30%, rgba(255, 46, 77, 0.22), transparent 45%),
+          linear-gradient(135deg, #11151e, #040507)
+        `;
       }
+    });
+  });
 
-    }
-  );
-
-});
-
+})();
 </script>
 
 </body>
